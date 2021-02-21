@@ -1,24 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Grid, GridColumn} from 'semantic-ui-react';
 import { useStore } from '../../../app/stores/store';
-import ActivityDetais from '../details/ActivityDetails';
-import ActivityForm from '../form/ActivityForm';
 import ActivityList from './ActivityList';
 import { observer } from 'mobx-react-lite';
+import LoadingComponent from '../../../app/layout/LoadingComponent';
 
 export default observer(function ActivityDashboard(){
     const {activityStore} = useStore();
-    const {selectedActivity, editMode} = activityStore
+    const {loadActivities, activityRegistry} = activityStore;
+
+    useEffect(() => {
+        if (activityRegistry.size <= 1) loadActivities();
+    }, [activityRegistry.size, loadActivities])
+
+    if (activityStore.loadingInitial) return <LoadingComponent content='Loading Eventfriend...'/>
     return (
         <Grid>
             <Grid.Column width='10'>
                 <ActivityList/>
             </Grid.Column>
             <GridColumn width='6'>
-                {selectedActivity && !editMode &&
-                <ActivityDetais />}
-                {editMode &&
-                <ActivityForm/>}
+                <h2>Event Filters</h2>
             </GridColumn>
         </Grid>
     )
