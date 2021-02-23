@@ -14,7 +14,7 @@ export default observer(function ActivityDashboard(){
         if (activityRegistry.size <= 1) loadActivities();
     }, [activityRegistry.size, loadActivities])
 
-    if (activityStore.loadingInitial) return <LoadingComponent content='Loading Eventfriend...'/>
+    if (activityStore.loadingInitial) return <LoadingComponent content='Loading Events...'/>
     return (
         <Grid>
             <Grid.Column width='10'>
