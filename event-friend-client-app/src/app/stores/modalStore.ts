@@ -1,5 +1,4 @@
-import { tr } from "date-fns/locale";
-import { makeAutoObservable, reaction } from "mobx";
+import { makeAutoObservable } from "mobx";
 
 interface Modal {
     open: boolean;
