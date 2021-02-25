@@ -18,7 +18,7 @@ export default observer(function ActivityDetailedSidebar ({activity: {attendees,
                 attached='top'
                 secondary
                 inverted
-                color='teal'
+                color='purple'
             >
                 {attendees.length} {attendees.length === 1 ? 'Person' : 'People'} attending.
             </Segment>
@@ -29,7 +29,7 @@ export default observer(function ActivityDetailedSidebar ({activity: {attendees,
                             {attendee.username === host?.username &&
                                 <Label
                                     style={{ position: 'absolute' }}
-                                    color='orange'
+                                    color='pink'
                                     ribbon='right'
                                 >
                                     Host
@@ -39,7 +39,7 @@ export default observer(function ActivityDetailedSidebar ({activity: {attendees,
                                 <Item.Header as='h3'>
                                     <Link to={`/profiles/${attendee.username}`}>{attendee.displayName}</Link>
                                 </Item.Header>
-                                <Item.Extra style={{ color: 'orange' }}>Following</Item.Extra>
+                                <Item.Extra style={{ color: 'pink' }}>Following</Item.Extra>
                             </Item.Content>
                         </Item>
                     ))}

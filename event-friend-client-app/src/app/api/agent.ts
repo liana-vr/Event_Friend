@@ -27,9 +27,6 @@ axios.interceptors.response.use(async response => {
     const {data, status, config} = error.response!;
     switch (status) {
         case 400:
-            if (typeof data === 'string'){
-                toast.error(data);
-            }
             if (config.method === 'get' && data.errors.hasOwnProperty('id')) {
                 history.push('/not-found');
             }
@@ -41,7 +38,9 @@ axios.interceptors.response.use(async response => {
                     }
                 }
                 throw modalStateErrors.flat();
-            } 
+            } else {
+                toast.error(data);
+            }
             break;
         case 401:
             toast.error('unauthorised');
@@ -75,7 +74,7 @@ const Activities = {
     attend: (id: string) => requests.post<void>(`/activities/${id}/attend`, {})
 }
 
-const Account ={
+const Account = {
     current: () => requests.get<User>('/account'),
     login: (user: UserFormValues) => requests.post<User>('/account/login', user),
     register: (user: UserFormValues) => requests.post<User>('/account/register', user)

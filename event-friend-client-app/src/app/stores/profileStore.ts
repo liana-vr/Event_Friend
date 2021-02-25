@@ -1,10 +1,9 @@
-import { Photo, Profile } from "../models/profile";
 import { makeAutoObservable, runInAction } from "mobx";
 import agent from "../api/agent";
+import { Photo, Profile } from "../models/profile";
 import { store } from "./store";
 
-
-export default class ProfileStore{
+export default class ProfileStore {
     profile: Profile | null = null;
     loadingProfile = false;
     uploading = false;
@@ -14,14 +13,14 @@ export default class ProfileStore{
         makeAutoObservable(this);
     }
 
-    get isCurrentUser(){
-        if (store.userStore.user && this.profile){
+    get isCurrentUser() {
+        if (store.userStore.user && this.profile) {
             return store.userStore.user.username === this.profile.username;
         }
         return false;
     }
 
-    loadProfile = async(username: string) => {
+    loadProfile = async (username: string) => {
         this.loadingProfile = true;
         try {
             const profile = await agent.Profiles.get(username);
@@ -43,15 +42,15 @@ export default class ProfileStore{
             runInAction(() => {
                 if (this.profile) {
                     this.profile.photos?.push(photo);
-                    if (photo.isMain && store.userStore.user){
+                    if (photo.isMain && store.userStore.user) {
                         store.userStore.setImage(photo.url);
                         this.profile.image = photo.url;
                     }
                 }
                 this.uploading = false;
             })
-        } catch (error) {
-            console.log(error)
+        } catch (error) {   
+            console.log(error);
             runInAction(() => this.uploading = false);
         }
     }
@@ -75,10 +74,10 @@ export default class ProfileStore{
         }
     }
 
-    deletePhoto =async (photo: Photo) => {
+    deletePhoto = async (photo: Photo) => {
         this.loading = true;
         try {
-            await agent.Profiles.deletePhoto(photo.id)
+            await agent.Profiles.deletePhoto(photo.id);
             runInAction(() => {
                 if (this.profile) {
                     this.profile.photos = this.profile.photos?.filter(p => p.id !== photo.id);
@@ -86,12 +85,11 @@ export default class ProfileStore{
                 }
             })
         } catch (error) {
-            runInAction(() => this.loading = false)
-            console.log(error)
-            
+            runInAction(() => this.loading = false);
+            console.log(error);
         }
     }
-    
+
     updateProfile = async (profile: Partial<Profile>) => {
         this.loading = true;
         try {
@@ -108,4 +106,5 @@ export default class ProfileStore{
             runInAction(() => this.loading = false);
         }
     }
+
 }

@@ -9,6 +9,10 @@ body{
   width: 100%;
   border: none;
   box-shadow: 0 2px 4px 0 rgba(34,36,38,.15);
+  border-radius: 20px;
+}
+.react-calendar__tile--now, .react-calendar__tile--now:hover{
+  background: #ab51ff;
 }
 
 .react-datepicker-wrapper {
@@ -20,7 +24,8 @@ body{
 .masthead {
   display: flex;
   align-items: center;
-  background-image: linear-gradient(135deg, #0a0046 0%, #ab51ff 69%, #fd3a69 89%) !important;
+  background-image: linear-gradient(135deg,
+   #0a0046 0%, #ab51ff 69%, #fd3a69 89%) !important;
   height: 100vh;
 }
 
@@ -40,3 +45,21 @@ body{
 }
 
 /*end home page styles*/
+
+/*Semantic UI Overrides*/
+
+.ui.button, .ui.basic.button, .ui.basic.label {
+  border-radius: 100px;
+}
+.ui.segments, .ui.large.vertical.menu {
+  border-radius: 20px;
+}
+.ui.segments:not(.horizontal)>.segment:first-child,
+.ui.segment[class*="top attached"]:first-child,
+.ui.fluid.image,
+.ui.inverted.purple.segment{
+  border-radius: 20px 20px 0px 0px;
+}
+.ui.segments:not(.horizontal)>.segment:last-child{
+  border-radius: 0px 0px 20px 20px;
+}

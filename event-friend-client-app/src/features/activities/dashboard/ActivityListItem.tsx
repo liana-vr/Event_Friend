@@ -48,7 +48,7 @@ export default function ActivityListItem({activity}: Props){
             </Segment>
             <Segment clearing>
                 <span>{activity.description}</span>
-                <Button as={Link} to={`activities/${activity.id}`} color='teal' floated='right' content='view'/> 
+                <Button as={Link} to={`activities/${activity.id}`} color='violet' floated='right' content='view'/> 
             </Segment>
         </Segment.Group>
     )

@@ -29,12 +29,12 @@ function App() {
     }
   }, [commonStore, userStore])
 
-  if (!commonStore.appLoaded) return <LoadingComponent content='Loading Eventfriend...'/>
+  if (!commonStore.appLoaded) return <LoadingComponent content='Loading app...' />
 
   return (
     <>
       <ToastContainer position='bottom-right' hideProgressBar />
-      <ModalContainer/>
+      <ModalContainer />
       <Route exact path='/' component={HomePage} />
       <Route
         path={'/(.+)'}
