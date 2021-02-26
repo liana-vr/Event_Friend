@@ -52,14 +52,15 @@ body{
   border-radius: 100px;
 }
 .ui.segments, .ui.large.vertical.menu {
-  border-radius: 20px;
+  border-radius: 15px;
 }
 .ui.segments:not(.horizontal)>.segment:first-child,
 .ui.segment[class*="top attached"]:first-child,
 .ui.fluid.image,
-.ui.inverted.purple.segment{
-  border-radius: 20px 20px 0px 0px;
+.ui.inverted.purple.segment,
+.ui.attached:not(.top):not(.bottom).header{
+  border-radius: 15px 15px 0px 0px;
 }
 .ui.segments:not(.horizontal)>.segment:last-child{
-  border-radius: 0px 0px 20px 20px;
+  border-radius: 0px 0px 15px 15px;
 }
