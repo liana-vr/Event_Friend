@@ -12,24 +12,22 @@ export default observer(function HomePage(){
     return(
            <Segment inverted textAlign='center' vertical className='masthead'>
                 <Container text>
-                    <Header as='h1' inverted>
-                        <Image size='massive' src='/assets/logo.png' alt='logo' style={{marginBotom: 12}}/>
-                        Eventfriend
-                    </Header>
+                    <Image className='robot' src={`/assets/meditation.png`} />
+                    <h1>eventfriend</h1>
                     {userStore.isLoggedIn ? (
                         <>
-                            <Header as='h2' inverted content='Welcome Friend!'/>
-                            <Button as={Link} to='/activities' size='huge' inverted>
-                                Show Me Events!
+                            <Button className='login'as={Link} to='/activities' size='huge'>
+                                events
                             </Button>
                         </>
                     ) : (
                             <>
-                                <Button onClick={() => modalStore.openModal(<LoginForm/>)} size='huge' inverted>
-                                    Login!
+                                <Button className='login' onClick={() => modalStore.openModal(<LoginForm/>)} size='huge'>
+                                    Login
                                 </Button>
-                                <Button onClick={() => modalStore.openModal(<RegisterForm/>)} size='huge' inverted>
-                                    Register!
+                                
+                                <Button className='register' onClick={() => modalStore.openModal(<RegisterForm/>)} size='huge'>
+                                    Register
                                 </Button>
                             </>
                         )}

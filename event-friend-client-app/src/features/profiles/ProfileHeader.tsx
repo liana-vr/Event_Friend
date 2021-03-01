@@ -10,19 +10,19 @@ interface Props{
 
 export default observer(function ProfileHeader({profile}: Props){
     return(
-        <Segment>
+        <Segment className='profileHeader'>
             <Grid>
-                <Grid.Column width={12}>
+                <Grid.Column width={8}>
                     <Item.Group>
                         <Item>
-                            <Item.Image avatar size='small' src={profile.image || '/assets/user.png'}/>
+                            <Item.Image avatar size='small' src={profile.image || '/assets/user_02.png'}/>
                             <Item.Content verticalAlign='middle'>
                                 <Header as='h1' content={profile.displayName}/>
                             </Item.Content>
                         </Item>
                     </Item.Group>
                 </Grid.Column>
-                <Grid.Column width={4}>
+                <Grid.Column width={8}>
                     <Statistic.Group widths={2}>
                         <Statistic label='Followers' value={profile.followersCount}/>
                         <Statistic label='Following' value={profile.followingCount}/>

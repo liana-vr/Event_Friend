@@ -10,7 +10,7 @@ export default observer(function ProfileAbout() {
     const [editMode, setEditMode] = useState(false);
 
     return (
-        <Tab.Pane>
+        <Tab.Pane className='profileHeader'>
             <Grid>
                 <Grid.Column width='16'>
                     <Header floated='left' icon='user' content={`About ${profile?.displayName}`} />

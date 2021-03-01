@@ -50,9 +50,9 @@ export default observer(function ActivityForm() {
     if (loadingInitial) return <LoadingComponent content='Loading activity...' />
 
     return (
-        <Segment clearing>
+        <Segment clearing className='activityForm'>
             <Header content='Activity Details' sub color='teal' />
-            <Formik 
+            <Formik
                 validationSchema={validationSchema}
                 enableReinitialize 
                 initialValues={activity} 
@@ -61,7 +61,7 @@ export default observer(function ActivityForm() {
                     <Form className='ui form' onSubmit={handleSubmit} autoComplete='off'>
                         <MyTextInput name='title' placeholder='Title' />
                         <MyTextArea rows={3} placeholder='Description' name='description' />
-                        <MySelectInput options={categoryOptions} placeholder='Category'  name='category' />
+                        <MySelectInput options={categoryOptions} placeholder='Category'  name='category'/>
                         <MyDateInput 
                             placeholderText='Date'  
                             name='date' 
@@ -72,11 +72,11 @@ export default observer(function ActivityForm() {
                         <Header content='Location Details' sub color='teal' />
                         <MyTextInput placeholder='City'  name='city' />
                         <MyTextInput placeholder='Venue' name='venue' />
-                        <Button 
+                        <Button className='formSubmit'
                             disabled={isSubmitting || !dirty || !isValid}
                             loading={isSubmitting} floated='right' 
                             positive type='submit' content='Submit' />
-                        <Button as={Link} to='/activities' floated='right' type='button' content='Cancel' />
+                        <Button className='formCancel' as={Link} to='/activities' floated='right' type='button' content='Cancel' />
                     </Form>
                 )}
             </Formik>

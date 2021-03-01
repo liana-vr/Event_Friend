@@ -23,7 +23,7 @@ export default function MySelectInput(props: Props){
                 placeholder={props.placeholder}
             />
             {meta.touched && meta.error ? (
-                <Label bsic color='pink'>{meta.error}</Label>
+                <Label basic color='pink'>{meta.error}</Label>
             ) : null}
         </Form.Field>
     )
