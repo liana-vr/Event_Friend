@@ -7,7 +7,7 @@ import { format } from 'date-fns';
 import { useStore } from "../../app/stores/store";
 
 const panes = [
-    { menuItem: 'Future Events', pane: { key: 'future' } },
+    { menuItem: 'Future', pane: { key: 'future' } },
     { menuItem: 'Past Events', pane: { key: 'past' } },
     { menuItem: 'Hosting', pane: { key: 'hosting' } }
 ];
@@ -33,7 +33,7 @@ export default observer(function ProfileActivities() {
         <Tab.Pane loading={loadingActivities}>
             <Grid>
                 <Grid.Column width={16}>
-                    <Header floated='left' icon='calendar' content={'Activities'} />
+                    <Header floated='left' content={'Events'} />
                 </Grid.Column>
                 <Grid.Column width={16}>
                     <Tab
@@ -44,16 +44,16 @@ export default observer(function ProfileActivities() {
                     <br />
                     <Card.Group itemsPerRow={4}>
                         {userActivities.map((activity: UserActivity) => (
-                            <Card
+                            <Card className='profilePhotos'
                                 as={Link}
                                 to={`/activities/${activity.id}`}
                                 key={activity.id}
                             >
                                 <Image
-                                    src={`/assets/categoryImages/${activity.category}.jpg`}
+                                    src={`/assets/categoryImages/${activity.category}.png`}
                                     style={{ minHeight: 100, objectFit: 'cover' }}
                                 />
-                                <Card.Content>
+                                <Card.Content className='profilePhotos'>
                                     <Card.Header textAlign='center'>{activity.title}</Card.Header>
                                     <Card.Meta textAlign='center'>
                                         <div>{format(new Date(activity.date), 'do LLL')}</div>

@@ -27,25 +27,25 @@ export default function PhotoUploadWidget({loading, uploadPhoto}: Props){
     return(
         <Grid>
             <Grid.Column width={4}>
-                <Header sub color='purple' content='Step 1 - Add Image'/>
+                <Header className='picUploadHeading' sub color='black' content='Step 1 - Add Image'/>
                 <PhotoWidgetDropzone setFiles={setfiles}/>
             </Grid.Column>
             <Grid.Column width={1}/>
             <Grid.Column width={4}>
-                <Header sub color='purple' content='Step 2 - Resize Image'/>
+                <Header className='picUploadHeading' sub color='black' content='Step 2 - Resize Image'/>
                 {files && files.length > 0 && (
                     <PhotoWidgetCropper setCropper={setCropper} imagePreview={files[0].preview}/>
                 )}
             </Grid.Column>
             <Grid.Column width={1}/>
             <Grid.Column width={4}>
-                <Header sub color='purple' content='Step 3 - Preview and Upload'/>
+                <Header className='picUploadHeading' sub color='black' content='Step 3 - Preview and Upload'/>
                 {files && files.length > 0 && 
                     <>
                         <div className='img-preview' style={{minHeight: 150, overflow: 'hidden', borderRadius: '20px', textAlign: 'center'}}/>
-                        <Button.Group widths={2}>
-                            <Button loading={loading} onClick={onCrop} color='blue' size='mini' icon='check' style={{marginTop: 12}}/>
-                            <Button disabled={loading} onClick={() => setfiles([])} size='mini' icon='close' style={{marginTop: 12}}/>
+                        <Button.Group className='photoButtons' widths={2}>
+                            <Button className='checkPic' loading={loading} onClick={onCrop} color='blue' size='mini' icon='check' style={{marginTop: 12}}/>
+                            <Button className='cancelPic' disabled={loading} onClick={() => setfiles([])} size='mini' icon='close' style={{marginTop: 12}}/>
                         </Button.Group>
                     </>}
             </Grid.Column>

@@ -12,7 +12,7 @@ export default observer(function ActivityDetailedSidebar ({activity: {attendees,
     if (!attendees) return null;
     return (
         <>
-            <Segment
+            <Segment className='peopleAttending'
                 textAlign='center'
                 style={{ border: 'none' }}
                 attached='top'
@@ -20,7 +20,7 @@ export default observer(function ActivityDetailedSidebar ({activity: {attendees,
                 inverted
                 color='purple'
             >
-                {attendees.length} {attendees.length === 1 ? 'Person' : 'People'} attending.
+                {attendees.length} {attendees.length === 1 ? 'Person' : 'People'} Attending
             </Segment>
             <Segment attached>
                 <List relaxed divided>
@@ -34,19 +34,20 @@ export default observer(function ActivityDetailedSidebar ({activity: {attendees,
                                 >
                                     Host
                                 </Label>}
-                            <Image size='tiny' src={attendee.image || '/assets/user.png'} />
+                            <Image size='tiny' circular src={attendee.image || '/assets/user.png'} />
                             <Item.Content verticalAlign='middle'>
                                 <Item.Header as='h3'>
                                     <Link to={`/profiles/${attendee.username}`}>{attendee.displayName}</Link>
                                 </Item.Header>
                                 {attendee.following &&
-                                <Item.Extra style={{ color: 'pink' }}>Following</Item.Extra>}
+                                <Item.Extra style={{ color: '#ff68f7' }}>Following</Item.Extra>}
                             </Item.Content>
                         </Item>
                     ))}
 
                 </List>
             </Segment>
+            <Segment className='bottomSegment' attached='bottom'></Segment>
         </>
 
     )

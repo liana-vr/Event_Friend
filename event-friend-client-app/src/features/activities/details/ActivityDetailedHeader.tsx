@@ -8,16 +8,17 @@ import { useStore } from '../../../app/stores/store';
 
 
 const activityImageStyle = {
-    filter: 'brightness(60%)'
+    filter: 'brightness(100%)'
 };
 
 const activityImageTextStyle = {
     position: 'absolute',
-    bottom: '5%',
-    left: '5%',
-    width: '100%',
+    top: '-3.5%',
+    left: '0%',
+    width: '50%',
     height: 'auto',
-    color: 'white'
+    color: 'black',
+    background: 'white',
 };
 
 interface Props {
@@ -33,15 +34,15 @@ export default observer (function ActivityDetailedHeader({activity}: Props) {
                     <Label style={{position: 'absolute', zIndex: 1000, left: -14, top: 20}} 
                         ribbon color='pink' content='Cancelled'/>
                 }
-                <Image src={`/assets/categoryImages/${activity.category}.jpg`} fluid style={activityImageStyle}/>
-                <Segment style={activityImageTextStyle} basic>
+                <Image src={`/assets/categoryImages/${activity.category}.png`} fluid style={activityImageStyle}/>
+                <Segment className='activityName' style={activityImageTextStyle} basic>
                     <Item.Group>
                         <Item>
                             <Item.Content>
                                 <Header
                                     size='huge'
                                     content={activity.title}
-                                    style={{color: 'white'}}
+                                    style={{color: 'black'}}
                                 />
                                 <p>{format(activity.date!, 'dd MMM yyyy')}</p>
                                 <p>
@@ -62,7 +63,7 @@ export default observer (function ActivityDetailedHeader({activity}: Props) {
                         </Button>
                     </>
                 ) : activity.isGoing ? (
-                    <Button loading={loading} onClick={updateAttendance}>Cancel attendance</Button>
+                    <Button loading={loading} color='pink' onClick={updateAttendance}>Cancel attendance</Button>
                 ) : (
                     <Button loading={loading} disabled={activity.isCancelled} onClick={updateAttendance} color='purple'>Join Event</Button>
                 )}

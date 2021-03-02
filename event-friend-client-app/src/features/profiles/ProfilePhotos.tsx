@@ -33,7 +33,7 @@ export default observer(function ProfilePhotos({ profile }: Props) {
         <Tab.Pane>
             <Grid>
                 <Grid.Column width={16}>
-                    <Header floated='left' icon='image' content='Photos' />
+                    <Header floated='left' content='Photos' />
                     {isCurrentUser && (
                         <Button floated='right' basic
                             content={addPhotoMode ? 'Cancel' : 'Add Photo'}
@@ -47,11 +47,11 @@ export default observer(function ProfilePhotos({ profile }: Props) {
                     ) : (
                             <Card.Group itemsPerRow={5}>
                                 {profile.photos?.map(photo => (
-                                    <Card key={photo.id}>
-                                        <Image src={photo.url} />
+                                    <Card className='profilePhotos' key={photo.id}>
+                                        <Image className='profilePhotos' src={photo.url} />
                                         {isCurrentUser && (
-                                            <Button.Group fluid widths={2}>
-                                                <Button 
+                                            <Button.Group className='profilePhotos' fluid widths={2}>
+                                                <Button className='editPic'
                                                     basic
                                                     color='blue'
                                                     content='Main'
@@ -60,7 +60,7 @@ export default observer(function ProfilePhotos({ profile }: Props) {
                                                     loading={target === 'main' + photo.id && loading}
                                                     onClick={e => handleSetMainPhoto(photo, e)}
                                                 />
-                                                <Button 
+                                                <Button className='editPic'
                                                     basic 
                                                     color='pink' 
                                                     icon='trash' 

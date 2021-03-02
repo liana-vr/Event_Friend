@@ -12,7 +12,7 @@ export default function PhotoWidgetDropzone({setFiles}: Props) {
         border: 'dashed 3px #a1cae2',
         borderColor: '#a1cae2',
         borderRadius: '20px',
-        paddingTop: '30px',
+        paddingTop: '45px',
         textAlign: 'center' as 'center',
         height: 200
     }
@@ -31,8 +31,8 @@ export default function PhotoWidgetDropzone({setFiles}: Props) {
     return (
         <div {...getRootProps()} style={isDragActive ? {...dzStyles, ...dzActive} : dzStyles}>
             <input {...getInputProps()} />
-            <Icon name='upload' size='huge' />
-            <Header content='Dop Image Here'/>
+            <Icon name='cloud upload' size='huge' />
+            <Header content='Upload'/>
         </div>
     )
 }

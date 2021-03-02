@@ -25,7 +25,7 @@ export default observer(function ActivityDetailedChat({ activityId }: Props) {
 
     return (
         <>
-            <Segment
+            <Segment className='chatHeading'
                 textAlign='center'
                 attached='top'
                 inverted
@@ -86,6 +86,7 @@ export default observer(function ActivityDetailedChat({ activityId }: Props) {
                     ))}
                 </Comment.Group>
             </Segment>
+            <Segment className='bottomSegment' attached='bottom'></Segment>
         </>
 
     )

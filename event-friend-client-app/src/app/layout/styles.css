@@ -1,10 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 html, body {
   width: 100%;
   height:100%;
   background-color: #dbeafd !important;
+  font-family: 'Roboto', sans-serif !important;
 }
-.ui.top.fixed.menu{
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+.ui.top.fixed.menu, .react-calendar, .react-datepicker-wrapper,
+.login, .ui.pink.label.hostLabel, .loginForm, .formSubmit, .checkPic,
+.register, .viewButton, .registerForm, .formCancel,.activityForm, 
+.profileHeader, .profileMenu>.ui.menu, 
+.profileMenu>.ui.menu>.item,
+.ui.tab.active, .ui.tab.open, 
+.ui.cards>.card>:last-child, .ui.attached:not(.top):not(.bottom).header,
+.profilePhotos, .react-datepicker__header, .ui.segments, .ui.large.vertical.menu, 
+.ui.attached.segment, .ui.inverted.segment>.ui.header, h3,
+.ui.items>.item>.content>.header, .ui.pink.button, .ui.basic.pink.button, 
+.formCancel, .ui.violet.button, .ui.purple.button{
+  font-family: 'Roboto', sans-serif !important;
+}
+.ui.top.fixed.menu {
   background: #e1ebf8 !important;
+}
+.ui.inverted.segment>.ui.header, .ui.inverted.purple.segment, a{
+  color: black !important;
+}
+.peopleAttending, .ui.inverted.segment>.ui.header{
+  font-size: 1.5rem !important;
 }
 .react-calendar{
   width: 100%;
@@ -12,11 +34,20 @@ html, body {
   box-shadow: 0 2px 4px 0 rgba(34,36,38,.15);
   border-radius: 20px;
 }
-.react-calendar__tile--now, .react-calendar__tile--now:hover{
-  background: #ab51ff;
+.react-calendar__tile--now, .react-calendar__tile--now:hover,
+.react-datepicker__day--keyboard-selected, .react-datepicker__day--selected,
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box 
+ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected{
+  background: #853aff !important;
+  border-radius: 30% !important;
+  box-shadow:  8px 8px 12px 0 #c19bff,
+  -8px -8px 12px 0 rgba(255, 255, 255, 0.5) !important;
 }
 .react-datepicker-wrapper {
   width: 100%;
+}
+.react-calendar__month-view__days__day--weekend{
+  color: #1381ff !important;
 }
 
 /*home page styles*/
@@ -55,13 +86,33 @@ html, body {
   transform: translateY(5%);
   border-color: white;
 }
-.login, .ui.pink.label.hostLabel, .loginForm, .formSubmit {
+.login, .ui.pink.label.hostLabel, .loginForm, .formSubmit, 
+.checkPic, .react-calendar__tile--active {
   background: #1381ff !important;
   border-color:  #1381ff !important;
   color: white !important;
   box-shadow: 8px 8px 12px 0 #96c7ff,
   -8px -8px 12px 0 rgba(255, 255, 255, 0.5) !important;
-
+}
+.react-calendar__tile--active{
+  border-radius: 30% !important;
+}
+.ui.comments .comment .avatar img{
+  border-radius: 50% !important;
+}
+.ui.two.buttons.photoButtons{
+  width: 8rem;
+  margin-left: .75rem;
+}
+.checkPic{
+  margin-right: 1.5rem !important;
+}
+.activityName{
+  border-radius: 15px 0px 15px 0px !important;
+  background: rgba(255, 255, 255, 0.6) !important;
+}
+.picUploadHeading{
+  margin-bottom: 2rem !important;
 }
 .ui.menu .ui.dropdown .menu>.item, .ui.dropdown .menu>.item:first-child{
   border-radius: 20px !important;
@@ -79,19 +130,25 @@ html, body {
 }
 .login, .register {
   width: 6.5em !important;
+  margin: 0.6em !important;
 }
-.register, .viewButton, .registerForm, .formCancel{
+.register, .viewButton, .registerForm, .formCancel, .ui.violet.button,
+.ui.purple.button{
   background: #853aff !important;
   color: white !important;
   box-shadow:  8px 8px 12px 0 #c19bff,
   -8px -8px 12px 0 rgba(255, 255, 255, 0.5) !important;
 }
-.ui.basic.violet.label.attendLabel{
+.ui.basic.violet.label.attendLabel, .cancelPic, .ui.pink.button, .ui.basic.pink.button,
+.ui.pink.ribbon.label{
   background: #ff68f7 !important;
   color: white !important;
   border-color:  #ff68f7 !important;
   box-shadow:  8px 8px 12px 0 #ffaefb,
   -8px -8px 12px 0 rgba(255, 255, 255, 0.5) !important;
+}
+.ui.pink.ribbon.label{
+border-radius: 15px 0 0 15px;
 }
 .ui.basic.purple.label{
   background: #ffffff !important;
@@ -105,16 +162,25 @@ html, body {
 /*end home page styles*/
 
 /*Semantic UI Overrides*/
-
-.ui.button, .ui.basic.button, .ui.basic.label {
-  border-radius: 100px;
+.formCancel{
+  margin-right: 1em !important;
 }
-.ui.segments, .profileHeader{
+.ui.button, .ui.basic.button, .ui.basic.label, .editPic {
+  border-radius: 100px !important;
+}
+.editPic{
+  padding: 8px !important;
+  margin: 0.6rem !important;
+  width: 2rem !important;
+}
+.ui.segments, .profileHeader, .ui.mini.modal, .ui.inverted.purple.segment,
+.ui.attached.segment{
   box-shadow: 15px 15px 20px 0 #bed0e7,
   -8px -8px 12px 0 rgba(255, 255, 255, 0.4) !important;
   border: white !important;
 }
-.activityForm, .ui.dropdown>.menu, .ui.dropdown .menu .menu{
+.activityForm, .ui.dropdown>.menu, .ui.dropdown .menu .menu,
+.profileMenu>.ui.menu, .ui.tab.active, .ui.tab.open {
   box-shadow: 15px 15px 20px 0 rgba(190, 208, 231, 0.6),
   -8px -8px 12px 0 rgba(255, 255, 255, 0.4) !important;
   background: #f8fbff !important;
@@ -128,26 +194,50 @@ html, body {
 .ui.segment[class*="top attached"]:first-child,
 .ui.fluid.image,
 .ui.inverted.purple.segment,
-.ui.attached:not(.top):not(.bottom).header{
+.ui.cards>.card>:first-child,
+.ui.attached:not(.top):not(.bottom).header,
+.ui.modal>.icon:first-child+*, .ui.modal>:first-child:not(.icon){
+  background: #f8fbff !important;
   border-radius: 15px 15px 0px 0px;
   border: white !important;
 }
-.ui.segments:not(.horizontal)>.segment:last-child {
-  border-radius: 0px 0px 15px 15px;
+.ui.segments:not(.horizontal)>.segment:last-child, 
+.ui.cards>.card>:last-child, .bottomSegment {
+  background: #f8fbff !important;
+  border-radius: 0px 0px 15px 15px !important;
   border: white !important;
-
 }
-.activityForm, .profileHeader{
+.activityForm, .profileHeader, .profileMenu>.ui.menu, 
+.profileMenu>.ui.menu>.item,
+.ui.tab.active, .ui.tab.open, 
+.ui.cards>.card>:last-child, 
+.profilePhotos, .ui.cards>.card>.image,
+.react-calendar, .react-datepicker-wrapper,
+.react-datepicker__month, .react-datepicker__header,
+.react-datepicker__month-container, .react-datepicker,
+.react-datepicker__time-container .react-datepicker__time,
+.ui.mini.modal, .ui.modal>:last-child, .ui.vertical.menu .active.item  {
+  background: #f0f5fc !important;
   border-radius: 15px 15px 15px 15px !important;
   border: white !important;
-
 }
-.activityCard, .profileHeader{
+.react-datepicker__triangle{
+  display: none;
+}
+.activityCard, .ui.attached.segment{
   background: #f8fbff !important;
   border: white !important;
 }
 .ui.dimmer {
   background-color: rgba(255,255,255,.5) !important;
 }
-
+.profileMenu{
+  margin-top: 2rem !important;
+}
+.profileMenu>.ui.menu>.item{
+  font-size: 1.5em !important;
+}
+.ui.cards>.card.profilePhotos{
+  box-shadow: 0px 0px 0px 0px white;
+}
 

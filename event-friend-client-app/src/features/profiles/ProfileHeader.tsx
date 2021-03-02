@@ -1,14 +1,23 @@
 import React from 'react';
-import { Grid, Header, Item, Segment, Statistic, Divider } from 'semantic-ui-react';
+import { Grid, Header, Item, Segment, Statistic, Divider, Button, Tab } from 'semantic-ui-react';
 import { Profile } from '../../app/models/profile';
 import { observer } from 'mobx-react-lite';
 import FollowButton from './FollowButton';
+import { useStore } from '../../app/stores/store';
+import modalStore from '../../app/stores/modalStore';
+import ActivityFilters from '../activities/dashboard/ActivityFilters';
+import ProfileFollowings from './ProfileFollowings';
+import profileStore from '../../app/stores/profileStore';
+
 
 interface Props{
     profile: Profile;
 }
 
 export default observer(function ProfileHeader({profile}: Props){
+    const {userStore, modalStore} = useStore();
+    const {profileStore} = useStore();
+    const { followings, loadingFollowings} = profileStore;
     return(
         <Segment className='profileHeader'>
             <Grid>
@@ -24,10 +33,10 @@ export default observer(function ProfileHeader({profile}: Props){
                 </Grid.Column>
                 <Grid.Column width={8}>
                     <Statistic.Group widths={2}>
-                        <Statistic label='Followers' value={profile.followersCount}/>
-                        <Statistic label='Following' value={profile.followingCount}/>
+                        <Button onClick={() => modalStore.openModal(<ProfileFollowings />)}>
+                            <Statistic label='Followers' value={profile.followersCount}/></Button>
+                        <Button><Statistic label='Following' value={profile.followingCount}/></Button>
                     </Statistic.Group>
-                    <Divider />
                     <FollowButton profile={profile}/>
                 </Grid.Column>
             </Grid>

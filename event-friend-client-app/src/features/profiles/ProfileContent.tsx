@@ -16,16 +16,16 @@ export default observer(function ProfileContent({profile}: Props) {
     const {profileStore} = useStore();
 
     const panes = [
-        {menuItem: 'About', render: () => <ProfileAbout />},
-        {menuItem: 'Photos', render: () => <ProfilePhotos profile={profile} />},
-        {menuItem: 'Events', render: () => <ProfileActivities/>},
-        {menuItem: 'Followers', render: () => <ProfileFollowings/>},
-        {menuItem: 'Following', render: () => <ProfileFollowings/>},
+        {menuItem: '📝', render: () => <ProfileAbout />},
+        {menuItem: '📷', render: () => <ProfilePhotos profile={profile} />},
+        {menuItem: '📆', render: () => <ProfileActivities/>},
+        // {menuItem: '👥', render: () => <ProfileFollowings/>},
+        // {menuItem: '👤', render: () => <ProfileFollowings/>},
     ];
 
     return (
-        <Tab 
-            menu={{fluid: true, vertical: true}}
+        <Tab className='profileMenu'
+            menu={{fluid: true, vertical: false}}
             menuPosition='right'
             panes={panes}
             onTabChange={(e, data) => profileStore.setActiveTab(data.activeIndex)}
