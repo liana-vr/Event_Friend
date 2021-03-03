@@ -1,6 +1,6 @@
 import React from 'react';
 import { observer } from 'mobx-react-lite';
-import { List, Image, Popup } from 'semantic-ui-react';
+import { List, Image, Popup, Label } from 'semantic-ui-react';
 import { Profile } from '../../../app/models/profile';
 import { Link } from 'react-router-dom';
 import ProfileCard from '../../profiles/ProfileCard';
@@ -11,8 +11,9 @@ interface Props {
 
 export default observer(function ActivityListItemAttendee({attendees}: Props){
     const styles = {
-        borderColor: 'pink',
-        borderWidth: 3
+        borderColor: '#ff68f7',
+        borderWidth: 2,
+        // boxShadow:  '5px 5px 6px 0 #ffaefb',
     }
     return(
         <List horizontal>
@@ -25,7 +26,8 @@ export default observer(function ActivityListItemAttendee({attendees}: Props){
                         </List.Item>
                     }>
                     <Popup.Content>
-                        <ProfileCard profile={attendee}/>
+                        <p>{attendee.displayName}</p>
+                        {/* <ProfileCard profile={attendee}/> */}
                     </Popup.Content>
                 </Popup>
             ))}

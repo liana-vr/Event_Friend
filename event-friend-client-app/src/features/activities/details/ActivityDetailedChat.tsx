@@ -25,7 +25,7 @@ export default observer(function ActivityDetailedChat({ activityId }: Props) {
 
     return (
         <>
-            <Segment className='chatHeading'
+            <Segment
                 textAlign='center'
                 attached='top'
                 inverted
@@ -50,7 +50,7 @@ export default observer(function ActivityDetailedChat({ activityId }: Props) {
                                     <div style={{ position: 'relative' }}>
                                         <Loader active={isSubmitting} />
                                         <textarea
-                                            placeholder='Say Something (Enter to submit)'
+                                            placeholder='Enter your comment (Enter to submit, SHIFT + enter for new line)'
                                             rows={2}
                                             {...props.field}
                                             onKeyPress={e => {
@@ -91,4 +91,3 @@ export default observer(function ActivityDetailedChat({ activityId }: Props) {
 
     )
 })
-

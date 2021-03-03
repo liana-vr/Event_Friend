@@ -22,10 +22,10 @@ export default observer(function FollowButton({profile}: Props) {
     return(
         <Reveal animated='move'>
             <Reveal.Content visible style={{width: '100%'}}>
-                <Button fluid color='purple' content={profile.following ? 'Following' : 'Not Following'}/>
+                <Button fluid color='purple' className='followButton' content={profile.following ? 'Following' : 'Not Following'}/>
             </Reveal.Content>
             <Reveal.Content hidden style={{width: '100%'}}>
-                <Button fluid basic
+                <Button fluid basic className='followButton'
                     color={profile.following ? 'pink' : 'purple'} 
                     content={profile.following ? 'Unfollow' : 'Follow'}
                     loading={loading} onClick={(e) => handleFollow(e, profile.username)}/>

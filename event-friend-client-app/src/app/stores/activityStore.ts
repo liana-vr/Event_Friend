@@ -1,4 +1,4 @@
-import { makeAutoObservable, runInAction, reaction } from "mobx";
+import { makeAutoObservable, reaction, runInAction } from "mobx";
 import agent from "../api/agent";
 import { Activity, ActivityFormValues } from "../models/activity";
 import {format} from 'date-fns';
@@ -19,7 +19,7 @@ export default class ActivityStore {
     constructor() {
         makeAutoObservable(this);
 
-        reaction (
+        reaction(
             () => this.predicate.keys(),
             () => {
                 this.pagingParams = new PagingParams();
@@ -56,14 +56,14 @@ export default class ActivityStore {
                 this.predicate.delete('startDate');
                 this.predicate.set('startDate', value);
         }
-    }
+    } 
 
     get axiosParams() {
         const params = new URLSearchParams();
         params.append('pageNumber', this.pagingParams.pageNumber.toString());
         params.append('pageSize', this.pagingParams.pageSize.toString());
         this.predicate.forEach((value, key) => {
-            if(key === 'startDate'){
+            if (key === 'startDate') {
                 params.append(key, (value as Date).toISOString())
             } else {
                 params.append(key, value);
@@ -236,10 +236,6 @@ export default class ActivityStore {
         }
     }
 
-    clearSelectedActivity = () => {
-        this.selectedActivity = undefined;
-    }
-
     updateAttendeeFollowing = (username: string) => {
         this.activityRegistry.forEach(activity => {
             activity.attendees.forEach(attendee => {
@@ -249,5 +245,9 @@ export default class ActivityStore {
                 }
             })
         })
+    }
+
+    clearSelectedActivity = () => {
+        this.selectedActivity = undefined;
     }
 }

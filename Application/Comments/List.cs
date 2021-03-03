@@ -18,6 +18,7 @@ namespace Application.Comments
         {
             public Guid ActivityId { get; set; }
         }
+
         public class Handler : IRequestHandler<Query, Result<List<CommentDto>>>
         {
             private readonly DataContext _context;

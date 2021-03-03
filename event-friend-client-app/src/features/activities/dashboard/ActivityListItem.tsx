@@ -19,10 +19,10 @@ export default function ActivityListItem({activity}: Props){
                 }
                 <Item.Group>
                     <Item>
-                        <Item.Image style={{marginBottom: 3}} size='small' circular src={activity.host?.image || '/assets/user_02.png'}/>
+                        <Item.Image className='activityCardPic' style={{marginBottom: 3}} size='small' circular src={`/assets/categoryImages/${activity.category}.png`}/>
                         <Item.Content>
                             <Item.Header as={Link} to={`/activities/${activity.id}`}>{activity.title}</Item.Header>
-                            <Item.Description>Hosted By <Link to={`/profiles/${activity.hostUsername}`}>{activity.host?.displayName}</Link></Item.Description>
+                            <Item.Description className='activityHost'>Hosted By <Link to={`/profiles/${activity.hostUsername}`}>{activity.host?.displayName}</Link></Item.Description>
                             {activity.isHost && (
                                 <Item.Description>
                                     <Label className='hostLabel' basic color='pink'>You Are The Host</Label>
@@ -33,14 +33,16 @@ export default function ActivityListItem({activity}: Props){
                                     <Label className='attendLabel' basic color='violet'>You Are Attending</Label>
                                 </Item.Description>
                             )}
+                            
                         </Item.Content>
                     </Item>
                 </Item.Group>
             </Segment>
             <Segment className='activityCard'>
                 <span>
-                    <Icon name='clock'/> {format(activity.date!, 'dd MMM yyyy h:mm aa')}
-                    <Icon name='marker'/> {activity.venue}
+                    <Icon name='clock'/> {format(activity.date!, 'dd MMM yyyy h:mm aa')}{' '}{' '}
+                    <Icon name='marker'/> {activity.venue}{' '}{' '}
+                    <Icon name='tag'/> {activity.category}{' '}{' '}
                 </span>
             </Segment>
             <Segment className='activityCard' secondary>

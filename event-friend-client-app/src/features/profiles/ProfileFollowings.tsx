@@ -1,7 +1,7 @@
 import React from 'react';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '../../app/stores/store';
-import { Button, Card, Grid, Header, Tab } from 'semantic-ui-react';
+import { Button, Card, Grid, Header, Label, Tab } from 'semantic-ui-react';
 import ProfileCard from './ProfileCard';
 import { Link } from 'react-router-dom';
 
@@ -13,8 +13,7 @@ export default observer(function ProfileFollowings(){
         <Tab.Pane loading={loadingFollowings}>
             <Grid>
                 <Grid.Column width={16}>
-                    <Button content={activeTab === 3 ? `Following` : `Followers`}/>
-                    <Button content={`Followers`}/>
+                    <Label className='profileLabels' basic color='purple' content={activeTab === 3 ? `Followers: ${profile?.followersCount}` : `Following: ${profile?.followingCount}`}/>
                 </Grid.Column>
                 <Grid.Column width={16}>
                     <Card.Group itemsPerRow={4}>

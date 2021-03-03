@@ -20,26 +20,33 @@ export default observer(function ProfileHeader({profile}: Props){
     const { followings, loadingFollowings} = profileStore;
     return(
         <Segment className='profileHeader'>
-            <Grid>
+            <Item.Group>
+                <Item>
+                    <Item.Image avatar size='small' src={profile.image || '/assets/user.png'}/>
+                    <Item.Content verticalAlign='middle'>
+                        <Header as='h1' content={profile.displayName}/>
+                    </Item.Content>
+                </Item>
+            </Item.Group>
+            <Item.Group className='bigFollowButton' style={{width: '40%'}}>
+                <FollowButton profile={profile}/>
+            </Item.Group>
+            {/* <Grid>
                 <Grid.Column width={8}>
                     <Item.Group>
                         <Item>
-                            <Item.Image avatar size='small' src={profile.image || '/assets/user_02.png'}/>
+                            <Item.Image avatar size='small' src={profile.image || '/assets/user.png'}/>
                             <Item.Content verticalAlign='middle'>
                                 <Header as='h1' content={profile.displayName}/>
                             </Item.Content>
                         </Item>
                     </Item.Group>
                 </Grid.Column>
-                <Grid.Column width={8}>
-                    <Statistic.Group widths={2}>
-                        <Button onClick={() => modalStore.openModal(<ProfileFollowings />)}>
-                            <Statistic label='Followers' value={profile.followersCount}/></Button>
-                        <Button><Statistic label='Following' value={profile.followingCount}/></Button>
-                    </Statistic.Group>
-                    <FollowButton profile={profile}/>
+                <Grid.Column width={8} className='bigFollowButton'>
+                    <FollowButton profile={profile} />
                 </Grid.Column>
-            </Grid>
+            </Grid> */}
         </Segment>
+        
     )
 })

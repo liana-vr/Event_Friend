@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite';
 import React, { SyntheticEvent, useState } from 'react';
-import { Button, Card, Grid, Header, Image, Tab } from 'semantic-ui-react';
+import { Button, Card, Grid, Header, Image, Label, Tab } from 'semantic-ui-react';
 import PhotoUploadWidget from '../../app/common/imageUpload/PhotoUploadWidget';
 import { Photo, Profile } from '../../app/models/profile';
 import { useStore } from '../../app/stores/store';
@@ -33,9 +33,9 @@ export default observer(function ProfilePhotos({ profile }: Props) {
         <Tab.Pane>
             <Grid>
                 <Grid.Column width={16}>
-                    <Header floated='left' content='Photos' />
+                    <Label className='profileLabels' basic color='purple'>Photos</Label>
                     {isCurrentUser && (
-                        <Button floated='right' basic
+                        <Button floated='right' color='purple' className='AddPhoto'
                             content={addPhotoMode ? 'Cancel' : 'Add Photo'}
                             onClick={() => setAddPhotoMode(!addPhotoMode)}
                         />
@@ -53,14 +53,14 @@ export default observer(function ProfilePhotos({ profile }: Props) {
                                             <Button.Group className='profilePhotos' fluid widths={2}>
                                                 <Button className='editPic'
                                                     basic
-                                                    color='blue'
+                                                    color='black'
                                                     content='Main'
                                                     name={'main' + photo.id}
                                                     disabled={photo.isMain}
                                                     loading={target === 'main' + photo.id && loading}
                                                     onClick={e => handleSetMainPhoto(photo, e)}
                                                 />
-                                                <Button className='editPic'
+                                                <Button className='deletePic'
                                                     basic 
                                                     color='pink' 
                                                     icon='trash' 

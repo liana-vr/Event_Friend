@@ -1,6 +1,6 @@
 import React from 'react';
 import Calendar from 'react-calendar';
-import { Header, Menu } from 'semantic-ui-react';
+import { Header, Label, Menu } from 'semantic-ui-react';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '../../../app/stores/store';
 
@@ -9,7 +9,7 @@ export default observer(function ActivityFilters(){
     return(
         <>
             <Menu vertical size='large' style={{width: '100%', marginTop: 27}}>
-                <Header icon='filter' attached color='purple' content='Filters'/>
+                <Label icon='filter' basic color='purple' content='Filters' className='activityFilters'/>
                 <Menu.Item content='All Activities' active={predicate.has('all')} 
                     onClick={() => setPredicate('all', 'true')}/>
                 <Menu.Item content='I am Attendng' active={predicate.has('isGoing')} 

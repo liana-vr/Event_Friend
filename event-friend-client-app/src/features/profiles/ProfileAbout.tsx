@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useStore} from "../../app/stores/store";
-import {Button, Grid, Header, Tab} from "semantic-ui-react";
+import {Button, Grid, Header, Label, Tab} from "semantic-ui-react";
 import { observer } from 'mobx-react-lite';
 import ProfileEditForm from './ProfileEditForm';
 
@@ -13,11 +13,10 @@ export default observer(function ProfileAbout() {
         <Tab.Pane className='profileHeader'>
             <Grid>
                 <Grid.Column width='16'>
-                    <Header floated='left' icon='user' content={`About ${profile?.displayName}`} />
+                   <Label className='profileLabels' basic color='purple'>{`About ${profile?.displayName}`}</Label>
                     {isCurrentUser && (
-                        <Button
+                        <Button color='purple' className='AddPhoto'
                             floated='right'
-                            basic
                             content={editMode ? 'Cancel' : 'Edit Profile'}
                             onClick={() => setEditMode(!editMode)}
                         />

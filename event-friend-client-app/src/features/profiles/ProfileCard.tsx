@@ -17,15 +17,14 @@ export default observer(function ProfileCard({profile}: Props) {
     }
 
     return (
-        <Card as={Link} to={`/profiles/${profile.username}`}>
-            <Image src={profile.image || '/assets/user_02.png'} />
+        <Card className='attendeeCard' as={Link} to={`/profiles/${profile.username}`}>
+            <Image style={{maxHeight: '5em', margin: 'auto', textAlign: 'center', borderRadius: '50%'}} 
+                    src={profile.image || '/assets/user.png'} className='profileCardPhoto'/>
             <Card.Content>
-                <Card.Header>{profile.displayName}</Card.Header>
-                <Card.Description>{truncate(profile.bio)}</Card.Description>
+                <Card.Header style={{textAlign: 'center'}}>{profile.displayName}</Card.Header>
             </Card.Content>
             <Card.Content extra>
-                <Icon name='user' />
-                {profile.followersCount} followers
+                <Icon name='user' />Followers: {profile.followersCount}
             </Card.Content>
             <FollowButton profile={profile}/>
         </Card>

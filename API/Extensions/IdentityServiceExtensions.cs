@@ -43,7 +43,7 @@ namespace API.Extensions
                         {
                             var accessToken = context.Request.Query["access_token"];
                             var path = context.HttpContext.Request.Path;
-                            if (!string.IsNullOrEmpty(accessToken) && (path.StartsWithSegments("/chats")))
+                            if (!string.IsNullOrEmpty(accessToken) && (path.StartsWithSegments("/chat")))
                             {
                                 context.Token = accessToken;
                             }
@@ -52,9 +52,9 @@ namespace API.Extensions
                     };
                 });
 
-            services.AddAuthorization(opt => 
+            services.AddAuthorization(opt =>
             {
-                opt.AddPolicy("IsActivityHost", policy => 
+                opt.AddPolicy("IsActivityHost", policy =>
                 {
                     policy.Requirements.Add(new IsHostRequirement());
                 });
