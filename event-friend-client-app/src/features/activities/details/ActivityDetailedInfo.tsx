@@ -11,29 +11,29 @@ interface Props {
 export default observer(function ActivityDetailedInfo({ activity }: Props) {
     return (
         <Segment.Group>
-            <Segment attached='top'>
+            <Segment className='activityCardInfo' attached='top'>
                 <Grid>
                     <Grid.Column width={1}>
                         <Icon size='large' color='black' name='info' />
                     </Grid.Column>
-                    <Grid.Column width={15}>
+                    <Grid.Column width={14}>
                         <p>{activity.description}</p>
                     </Grid.Column>
                 </Grid>
             </Segment>
-            <Segment attached>
+            <Segment className='activityCardInfo' attached>
                 <Grid verticalAlign='middle'>
                     <Grid.Column width={1}>
                         <Icon name='calendar' size='large' color='black' />
                     </Grid.Column>
-                    <Grid.Column width={15}>
+                    <Grid.Column width={14}>
                         <span>
                             {format(activity.date!, 'dd MMM yyyy h:mm aa')}
                         </span>
                     </Grid.Column>
                 </Grid>
             </Segment>
-            <Segment attached>
+            <Segment className='activityCardInfo' attached>
                 <Grid verticalAlign='middle'>
                     <Grid.Column width={1}>
                         <Icon name='marker' size='large' color='black' />

@@ -37,18 +37,18 @@ export default observer (function ActivityDetailedHeader({activity}: Props) {
                         ribbon color='pink' content='Cancelled' className='canceledEventFlag'/>
                 }
                 <Image src={`/assets/categoryImages/${activity.category}.png`} fluid style={activityImageStyle}/>
-                <Segment className='activityName' style={activityImageTextStyle} basic>
+                <Segment className='activityNameBG' style={activityImageTextStyle} basic>
                     <Item.Group>
                         <Item>
                             <Item.Content>
-                                <Header
+                                <Header className='activityName'
                                     size='huge'
                                     content={activity.title}
                                     style={{color: 'black'}}
                                 />
-                                <p>{format(activity.date!, 'dd MMM yyyy')}</p>
-                                <p>
-                                    Hosted by <strong><Link to={`/profiles/${activity.host?.username}`}>{activity.host?.displayName}</Link></strong>
+                                <p className='activityDetials'>{format(activity.date!, 'dd MMM yyyy')}</p>
+                                <p className='activityDetials'>
+                                    Hosted by <strong><Link to={`/profiles/${activity.host?.username}`} className='activityHost'>{activity.host?.displayName}</Link></strong>
                                 </p>
                             </Item.Content>
                         </Item>
@@ -60,16 +60,14 @@ export default observer (function ActivityDetailedHeader({activity}: Props) {
                     <>
                         <Button color={activity.isCancelled ? 'blue' : 'pink'} basic floated='left' className='cancelEventButton' 
                             content={activity.isCancelled ? 'Re-activate' : 'Cancel'} onClick={cancelActivityToggle} loading={loading}/>
-                        <Button as={Link} disabled={activity.isCancelled} to={`/manage/${activity.id}`} color='violet' floated='right'>
-                            Manage Event
-                        </Button>
+                        <Button as={Link} disabled={activity.isCancelled} to={`/manage/${activity.id}`} color='violet' floated='right'>Manage</Button>
                     </>
                 ) : activity.isGoing ? (
-                    <Button loading={loading} color='pink' onClick={updateAttendance}>Cancel</Button>
+                    <Button className='joinEventButton' loading={loading} color='pink' onClick={updateAttendance}>Cancel</Button>
                 ) : (
-                    <Button loading={loading} disabled={activity.isCancelled} onClick={updateAttendance} color='purple'>Join</Button>
+                    <Button className='joinventButton' loading={loading} disabled={activity.isCancelled} onClick={updateAttendance} color='purple'>Join</Button>
                 )}
-                <Button className='viewAttendees' loading={loading} color='blue' onClick={() => modalStore.openModal(<ActivityDetailedSidebar activity={activity}/>)}>Attendees</Button>
+                <Button className='viewAttendees' loading={loading} color='blue' onClick={() => modalStore.openModal(<ActivityDetailedSidebar activity={activity}/>)}>Guests</Button>
             </Segment>
         </Segment.Group>
     )

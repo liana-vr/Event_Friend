@@ -10,11 +10,12 @@ html, body {
 .login, .ui.pink.label.hostLabel, .loginForm, .formSubmit, .checkPic,
 .register, .viewButton, .registerForm, .formCancel,.activityForm, 
 .profileHeader, .profileMenu>.ui.menu, 
-.profileMenu>.ui.menu>.item,
+.profileMenu>.ui.menu>.item, .react-datepicker,
 .ui.tab.active, .ui.tab.open, .viewAttendees,
 .ui.cards>.card>:last-child, .ui.attached:not(.top):not(.bottom).header,
 .profilePhotos, .react-datepicker__header, .ui.segments, .ui.large.vertical.menu, 
-.ui.attached.segment, .ui.inverted.segment>.ui.header, h3,
+.ui.attached.segment, .ui.inverted.segment>.ui.header, h3, 
+.ui.secondary.pointing.menu,
 .ui.items>.item>.content>.header, .ui.pink.button, .ui.basic.pink.button, 
 .formCancel, .ui.violet.button, .ui.purple.button, .ui.header, .ui.cards>.card>.content>.header{
   font-family: 'Roboto', sans-serif !important;
@@ -28,18 +29,32 @@ html, body {
 .peopleAttending, .ui.inverted.segment>.ui.header{
   font-size: 1.5rem !important;
 }
+.ui.segment:first-child.profileHeader{
+  padding-bottom: 1.5em !important;
+}
 .react-calendar{
   width: 100%;
   border: none;
   box-shadow: 0 2px 4px 0 rgba(34,36,38,.15);
   border-radius: 20px;
 }
+.react-datepicker-popper{
+  border-radius: 20px;
+  background: #f8fbff !important;
+  box-shadow: 15px 15px 20px 0 #bed0e7,
+  -8px -8px 12px 0 rgba(255, 255, 255, 0.4) !important;
+}
+.photoWidget{
+  width: 200px !important;
+  height: 200px !important;
+  padding: auto !important;
+}
 .react-calendar__tile--now, .react-calendar__tile--now:hover,
 .react-datepicker__day--keyboard-selected, .react-datepicker__day--selected,
 .react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box 
 ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected{
   background: #853aff !important;
-  border-radius: 30% !important;
+  border-radius: 15px !important;
   box-shadow:  8px 8px 12px 0 #c19bff,
   -8px -8px 12px 0 rgba(255, 255, 255, 0.5) !important;
 }
@@ -49,11 +64,15 @@ ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected{
 .react-calendar__month-view__days__day--weekend{
   color: #1381ff !important;
 }
-.activityHost>a{
+.activityHost>a, .ui.items>.item a{
   color: #ff68f7 !important;
 }
-/*home page styles*/
-
+.ui.items>.item>.content>a.header{
+  color: black !important;
+}
+.cropper-modal{
+  background-color: rgba(248, 251, 255, 0) !important;
+}
 .masthead {
   display: flex;
   align-items: center;
@@ -88,7 +107,7 @@ ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected{
   transform: translateY(5%);
   border-color: white;
 }
-.login, .ui.pink.label.hostLabel, .loginForm, .formSubmit, .viewAttendees, 
+.login, .ui.basic.violet.label.attendLabel, .loginForm, .formSubmit, .viewAttendees, 
 .checkPic, .react-calendar__tile--active, .ui.basic.blue.button.cancelEventButton {
   background: #1381ff !important;
   border-color:  #1381ff !important;
@@ -109,15 +128,36 @@ ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected{
 .checkPic{
   margin-right: 1.5rem !important;
 }
-.activityName{
+.checkPic, .cancelPic{
+  height: 22px !important;
+  padding: 0 !important;
+}
+.activityNameBG{
   border-radius: 0px 15px 15px 0px !important;
-  background: rgba(255, 255, 255, 0.6) !important;
+  background: rgba(255, 255, 255, 0.8) !important;
 }
 .picUploadHeading{
   margin-bottom: 2rem !important;
 }
 .ui.menu .ui.dropdown .menu>.item, .ui.dropdown .menu>.item:first-child{
   border-radius: 20px !important;
+}
+.ui.form .field.error input[type=text], .ui.form .field.error input:not([type]),
+.ui.form .field.error textarea, .ui.form .field.error .ui.dropdown,
+.ui.form .field.error .ui.dropdown .text {
+  background: #fdebfd !important;
+  border-color:   #ff68f7 !important;
+  color: #ff68f7 !important;
+}
+.bigFollowButton, .ui.pink.basic.button.followButton,
+    .ui.purple.button.followButton {
+      width: 140px !important;
+      box-shadow:  8px 8px 12px 0 #dac4ff,
+      -8px -8px 12px 0 rgba(255, 255, 255, 0.5) !important;
+    }
+.ui.pink.basic.button.followButton,
+.ui.purple.button.followButton{
+  height: 2.5em !important;
 }
 .mainDropdown{
   right: auto;
@@ -135,19 +175,23 @@ ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected{
   margin: 0.6em !important;
 }
 .register, .viewButton, .registerForm, .formCancel, .ui.violet.button,
-.ui.purple.button, .AddPhoto, .bigFollowButton{
+.ui.purple.button, .AddPhoto{
   background: #853aff !important;
   color: white !important;
   box-shadow:  8px 8px 12px 0 #c19bff,
   -8px -8px 12px 0 rgba(255, 255, 255, 0.5) !important;
 }
-.ui.basic.violet.label.attendLabel, .cancelPic,
-.ui.pink.ribbon.label, .submitProfileEdit, .ui.pink.button, .ui.pink.button.cancelEventButton{
+.ui.pink.label.hostLabel, .cancelPic, .ui.basic.pink.label,
+.ui.pink.ribbon.label, .submitProfileEdit, .ui.pink.button, .ui.pink.button.cancelEventButton
+{
   background: #ff68f7 !important;
   color: white !important;
   border-color:  #ff68f7 !important;
   box-shadow:  8px 8px 12px 0 #ffaefb,
   -8px -8px 12px 0 rgba(255, 255, 255, 0.5) !important;
+}
+.joinEventButton{
+  width: 7.2em !important;
 }
 .ui.pink.basic.button.followButton{
   background: #ff68f7 !important;
@@ -179,6 +223,8 @@ border-radius: 15px 0 0 15px;
   border-color:  #1381ff !important;
   box-shadow:  8px 8px 12px 0 #aed4ff,
   -8px -8px 12px 0 rgba(255, 255, 255, 0.4) !important;
+}
+.ui.basic.purple.label.activityListDate{
   margin-top: 2rem !important;
   margin-bottom: 0.5rem !important;
 }
@@ -204,6 +250,9 @@ border-radius: 15px 0 0 15px;
 .ui.button, .ui.basic.button, .ui.basic.label, .editPic, .bigFollowButton {
   border-radius: 100px !important;
 }
+.ui.move.reveal{
+  border-radius: 100px !important;
+}
 .editPic, .deletePic{
   padding: 8px !important;
   margin: 0.6rem !important;
@@ -220,16 +269,16 @@ border-radius: 15px 0 0 15px;
   -8px -8px 12px 0 rgba(255, 255, 255, 0.4) !important;
   border: white !important;
 }
-.ui.dropdown>.menu, .ui.dropdown .menu .menu, .profileHeader,
+.ui.dropdown>.menu, .ui.dropdown .menu .menu, .profileHeader, .photoWidget,
 .profileMenu>.ui.menu, .ui.tab.active, .ui.tab.open, .activityForm, 
-.attendeeCard, .ui.cards>.card.profilePhotos {
+.attendeeCard, .ui.cards>.card.profilePhotos, .picUploads, .profileActivityCards {
   box-shadow: 15px 15px 20px 0 rgba(190, 208, 231, 0.6),
   -8px -8px 12px 0 rgba(255, 255, 255, 0.4) !important;
   background: #f8fbff !important;
   border: white;
 }
-.ui.segments, .ui.large.vertical.menu {
-  border-radius: 15px;
+.ui.segments, .ui.large.vertical.menu, .photoWidget {
+  border-radius: 15px !important;
   border: white !important;
 }
 .ui.segments:not(.horizontal)>.segment:first-child,
@@ -257,8 +306,8 @@ border-radius: 15px 0 0 15px;
 .profileMenu>.ui.menu>.item,
 .ui.tab.active, .ui.tab.open, 
 .ui.cards>.card>:last-child, .profileHeader,
-.profilePhotos, .ui.cards>.card>.image,
-.react-calendar, .react-datepicker-wrapper,
+.profilePhotos, .ui.cards>.card>.image, .profileActivityCards,
+.react-calendar, .react-datepicker-wrapper, .picUploads,
 .react-datepicker__month, .react-datepicker__header,
 .react-datepicker__month-container, .react-datepicker,
 .react-datepicker__time-container .react-datepicker__time,
@@ -273,6 +322,9 @@ border-radius: 15px 0 0 15px;
 .react-datepicker__triangle{
   display: none;
 }
+.picUploads{
+  width: 10em !important;
+}
 .activityCard, .ui.attached.segment{
   background: #f8fbff !important;
   border: white !important;
@@ -286,21 +338,139 @@ border-radius: 15px 0 0 15px;
 .profileMenu>.ui.menu>.item{
   font-size: 1.5em !important;
 }
-
+.profileActivityCards{
+  width: 15em !important;
+}
 .ui.cards>.card>.image.profileCardPhoto{
   border-radius: 50% !important;
   margin-top: 0.5em !important;
   margin-bottom: 0.5em !important;
 }
-.bigFollowButton{
-  /* margin-top: 4em !important;
-  max-width: 15% !important;
-  margin-left: auto !important; */
-}
 .viewAttendees{
   margin-left: 1em !important;
 }
-.activityCardPic{
-  width: 20em !important;
+.ui.small.image.activityCardPic{
+  width: 20em;
+}
+.errorLable{
+  border-radius: 15px !important;
 }
 
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px){
+    .ui.huge.header.activityName, .ui.items>.item>.content>a.header,
+    .ui.inverted.purple.segment, .ui.list>.item .header {
+      font-size: 1.1rem !important;
+      color: black !important;
+    }
+    .profileActivityHeader{
+      font-size: 1.2em!important;
+    }
+    .ui.items:not(.unstackable)>.item {
+      margin-bottom: 0.5em !important;
+    }
+    .ui.items>.item>.content p.activityDetials, .ui.dropdown>.text, .ui.selection.dropdown .menu>.item,
+    .ui.menu .ui.dropdown .menu .active.item, .ui.form textarea, .ui.dropdown .menu>.item:first-child,
+    .ui.menu .ui.dropdown .menu>.item, .ui.sub.header, .ui.form .field>.selection.dropdown, .react-calendar,
+    .ui.comments .comment a.author, .ui.comments, .editPic, .deletePic, .ui.form textarea, .ui.form input:not([type]),
+    .ui.form input[type=text], .ui.large.vertical.menu, .ui.basic.purple.label.activityFilters{
+      font-size: 0.8rem !important;
+    }
+    .ui.black.button.editPic, .ui.pink.button.deletePic{
+      width: 1em !important;
+    }
+    .react-datepicker__day-name, .react-datepicker__day, .react-datepicker__time-name{
+      width: 1.2rem !important;
+    }
+    .activityCardInfo, .ui.items>.item>.content>.description,
+    .ui.segment, .ui.segments .segment{
+      font-size: 0.8rem !important;
+    }
+    .react-calendar__month-view__weekdays__weekday{
+      padding: 0.2em !important;
+    }
+    .react-calendar__tile{
+      padding: 0.4em 0.3em;
+    }
+    .react-calendar__navigation button{
+      min-width: 24px !important;
+    }
+    .ui.basic.violet.label.attendLabel{
+      font-size: 0.7rem !important;
+    }
+    .ui.pink.label.hostLabel{
+      background: white !important;
+      color: #ff68f7 !important;
+      border-color:  #ff68f7 !important;
+      font-size: 0.7rem !important;
+    }
+    .ui.list>.item .header.attendeeListName{
+      font-size: 0.85rem !important;
+    }
+    .ui.button{
+      height: 2.4em !important;
+      font-size: 0.7rem !important;
+      width: 5.5em !important;
+      text-align: center !important;
+      padding-left: 1em !important;
+      padding-right: 1em !important;
+    }
+    .bigFollowButton, .ui.pink.basic.button.followButton,
+    .ui.purple.button.followButton {
+      width: 100px !important; 
+      border-radius: 100px !important;
+      text-align: center !important;
+      box-shadow: 8px 8px 12px 0 #dac4ff,
+      -8px -8px 12px 0 rgba(255, 255, 255, 0.5) !important;
+    }
+    .bigFollowButton{
+      margin: auto !important;
+    }
+    .ui.basic.purple.label, .activityFilters, 
+    .ui.basic.purple.label.profileLabels{
+      height: 2.4em !important;
+      font-size: 0.7rem !important;
+      width: 8em !important;
+      text-align: center !important;
+    }
+    .ui.items{
+      margin-bottom: -0em !important;
+    }
+    .ui.items>.item>.content>.header{
+      font-size: 1.1rem !important;
+      margin-top: -2em !important;
+    }
+    .ui.items:not(.unstackable)>.item>.image.profilePhoto{
+      width: 100px !important;
+      margin-top: -2em !important;
+    }
+    .profileActivityCards{
+      width: 11em !important;
+    }
+    .ui.items:not(.unstackable)>.item>.image{
+      width: 180px !important;
+      margin-top: -2em !important;
+    }
+    .ui.tiny.image{
+      width: 50px !important;
+      height: auto !important;
+    }
+    .ui.large.vertical.menu{
+      margin-top: 0px !important;
+    }
+    .ui.mini.modal{
+      width: 60% !important;
+    }
+    .ui.huge.button.login, .ui.huge.button.register{
+      width: 8em !important;
+      height: 3em !important;
+      margin: 0.6em !important;
+      font-size: 1rem !important;
+    }
+    .ui.pink.ribbon.label{
+      padding-left: 0.35em;
+      padding-right: calc(.5rem + 0.2em);
+      text-align: center;
+    }
+}

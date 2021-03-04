@@ -21,7 +21,7 @@ export default function MyDateInput(props: Partial<ReactDatePickerProps>){
                 onChange={value => helpers.setValue(value)}
             />
             {meta.touched && meta.error ? (
-                <Label bsic color='pink'>{meta.error}</Label>
+                <Label className='errorLabel' basic color='pink'>{meta.error}</Label>
             ) : null}
         </Form.Field>
     )

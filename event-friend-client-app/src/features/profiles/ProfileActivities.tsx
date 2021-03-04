@@ -42,9 +42,9 @@ export default observer(function ProfileActivities() {
                         onTabChange={(e, data) => handleTabChange(e, data)}
                     />
                     <br />
-                    <Card.Group itemsPerRow={4}>
+                    <Card.Group itemsPerRow={undefined}>
                         {userActivities.map((activity: UserActivity) => (
-                            <Card className='profilePhotos'
+                            <Card className='profileActivityCards'
                                 as={Link}
                                 to={`/activities/${activity.id}`}
                                 key={activity.id}
@@ -54,7 +54,7 @@ export default observer(function ProfileActivities() {
                                     style={{ minHeight: 100, objectFit: 'cover' }}
                                 />
                                 <Card.Content className='profilePhotos'>
-                                    <Card.Header textAlign='center'>{activity.title}</Card.Header>
+                                    <Card.Header className='profileActivityHeader' textAlign='center'>{activity.title}</Card.Header>
                                     <Card.Meta textAlign='center'>
                                         <div>{format(new Date(activity.date), 'do LLL')}</div>
                                         <div>{format(new Date(activity.date), 'h:mm a')}</div>

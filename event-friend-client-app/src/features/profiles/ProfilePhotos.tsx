@@ -15,6 +15,7 @@ export default observer(function ProfilePhotos({ profile }: Props) {
     const [addPhotoMode, setAddPhotoMode] = useState(false);
     const [target, setTarget] = useState('');
 
+
     function handlePhotoUpload(file: Blob) {
         uploadPhoto(file).then(() => setAddPhotoMode(false));
     }
@@ -36,7 +37,7 @@ export default observer(function ProfilePhotos({ profile }: Props) {
                     <Label className='profileLabels' basic color='purple'>Photos</Label>
                     {isCurrentUser && (
                         <Button floated='right' color='purple' className='AddPhoto'
-                            content={addPhotoMode ? 'Cancel' : 'Add Photo'}
+                            content={addPhotoMode ? 'Cancel' : 'Add'}
                             onClick={() => setAddPhotoMode(!addPhotoMode)}
                         />
                     )}
@@ -45,9 +46,9 @@ export default observer(function ProfilePhotos({ profile }: Props) {
                     {addPhotoMode ? (
                         <PhotoUploadWidget uploadPhoto={handlePhotoUpload} loading={uploading} />
                     ) : (
-                            <Card.Group itemsPerRow={5}>
+                            <Card.Group itemsPerRow={undefined}>
                                 {profile.photos?.map(photo => (
-                                    <Card className='profilePhotos' key={photo.id}>
+                                    <Card className='picUploads' key={photo.id}>
                                         <Image className='profilePhotos' src={photo.url} />
                                         {isCurrentUser && (
                                             <Button.Group className='profilePhotos' fluid widths={2}>

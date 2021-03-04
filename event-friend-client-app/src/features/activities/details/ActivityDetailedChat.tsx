@@ -2,7 +2,7 @@ import { Formik, Form, Field, FieldProps } from 'formik'
 import { observer } from 'mobx-react-lite'
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Segment, Header, Comment, Loader } from 'semantic-ui-react'
+import { Segment, Header, Comment, Loader, Label } from 'semantic-ui-react'
 import { useStore } from '../../../app/stores/store';
 import * as Yup from 'yup';
 import { formatDistanceToNow } from 'date-fns'
@@ -32,7 +32,7 @@ export default observer(function ActivityDetailedChat({ activityId }: Props) {
                 color='purple'
                 style={{ border: 'none' }}
             >
-                <Header>Chat about this event</Header>
+                <Label classname='chatLabel' basic color='purple'>Event Chat</Label>
             </Segment>
             <Segment attached clearing>
                 <Formik
@@ -50,7 +50,7 @@ export default observer(function ActivityDetailedChat({ activityId }: Props) {
                                     <div style={{ position: 'relative' }}>
                                         <Loader active={isSubmitting} />
                                         <textarea
-                                            placeholder='Enter your comment (Enter to submit, SHIFT + enter for new line)'
+                                            placeholder='Say Something! (Enter to submit)'
                                             rows={2}
                                             {...props.field}
                                             onKeyPress={e => {

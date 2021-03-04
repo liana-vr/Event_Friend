@@ -12,8 +12,8 @@ interface Props {
 export default function ActivityListItem({activity}: Props){
     
     return(
-        <Segment.Group>
-            <Segment className='activityCard'>
+        <Segment.Group className='activityCard'>
+            <Segment >
                 {activity.isCancelled &&
                     <Label attached='top' color='pink' content='Cancelled' style={{textAlign: 'center'}}/>
                 }
@@ -38,19 +38,19 @@ export default function ActivityListItem({activity}: Props){
                     </Item>
                 </Item.Group>
             </Segment>
-            <Segment className='activityCard'>
+            <Segment >
                 <span>
                     <Icon name='clock'/> {format(activity.date!, 'dd MMM yyyy h:mm aa')}{' '}{' '}
                     <Icon name='marker'/> {activity.venue}{' '}{' '}
                     <Icon name='tag'/> {activity.category}{' '}{' '}
                 </span>
             </Segment>
-            <Segment className='activityCard' secondary>
+            <Segment secondary>
                 <ActivityListItemAttendee attendees={activity.attendees!}/>
             </Segment>
-            <Segment className='activityCard' clearing>
+            <Segment clearing>
                 <span>{activity.description}</span>
-                <Button className='viewButton' as={Link} to={`activities/${activity.id}`} color='violet' floated='right' content='view'/> 
+                <Button className='viewButton' as={Link} to={`activities/${activity.id}`} color='violet' floated='right' content='View'/> 
             </Segment>
         </Segment.Group>
     )

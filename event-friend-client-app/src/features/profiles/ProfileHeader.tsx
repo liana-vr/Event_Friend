@@ -22,7 +22,7 @@ export default observer(function ProfileHeader({profile}: Props){
         <Segment className='profileHeader'>
             <Item.Group>
                 <Item>
-                    <Item.Image avatar size='small' src={profile.image || '/assets/user.png'}/>
+                    <Item.Image className='profilePhoto' avatar size='small' src={profile.image || '/assets/user.png'}/>
                     <Item.Content verticalAlign='middle'>
                         <Header as='h1' content={profile.displayName}/>
                     </Item.Content>
@@ -31,21 +31,6 @@ export default observer(function ProfileHeader({profile}: Props){
             <Item.Group className='bigFollowButton' style={{width: '40%'}}>
                 <FollowButton profile={profile}/>
             </Item.Group>
-            {/* <Grid>
-                <Grid.Column width={8}>
-                    <Item.Group>
-                        <Item>
-                            <Item.Image avatar size='small' src={profile.image || '/assets/user.png'}/>
-                            <Item.Content verticalAlign='middle'>
-                                <Header as='h1' content={profile.displayName}/>
-                            </Item.Content>
-                        </Item>
-                    </Item.Group>
-                </Grid.Column>
-                <Grid.Column width={8} className='bigFollowButton'>
-                    <FollowButton profile={profile} />
-                </Grid.Column>
-            </Grid> */}
         </Segment>
         
     )

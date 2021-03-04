@@ -17,7 +17,7 @@ export default observer(function ProfileAbout() {
                     {isCurrentUser && (
                         <Button color='purple' className='AddPhoto'
                             floated='right'
-                            content={editMode ? 'Cancel' : 'Edit Profile'}
+                            content={editMode ? 'Cancel' : 'Edit'}
                             onClick={() => setEditMode(!editMode)}
                         />
                     )}

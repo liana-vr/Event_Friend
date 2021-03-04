@@ -32,7 +32,7 @@ export default observer(function ProfileEditForm({setEditMode}: Props) {
                         color='pink'
                         type='submit'
                         loading={isSubmitting}
-                        content='Update profile'
+                        content='Update'
                         floated='right'
                         disabled={!isValid || !dirty}
                     />

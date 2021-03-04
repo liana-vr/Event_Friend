@@ -9,12 +9,13 @@ interface Props {
 export default function PhotoWidgetDropzone({setFiles}: Props) {
 
     const dzStyles = {
-        border: 'dashed 3px #a1cae2',
+        border: 'none',
         borderColor: '#a1cae2',
         borderRadius: '20px',
-        paddingTop: '45px',
+        paddingTop: '50px',
         textAlign: 'center' as 'center',
-        height: 200
+        height: 150,
+        width: 150
     }
 
     const dzActive = {
@@ -32,7 +33,7 @@ export default function PhotoWidgetDropzone({setFiles}: Props) {
         <div {...getRootProps()} style={isDragActive ? {...dzStyles, ...dzActive} : dzStyles}>
             <input {...getInputProps()} />
             <Icon name='cloud upload' size='huge' />
-            <Header content='Upload'/>
+            
         </div>
     )
 }
