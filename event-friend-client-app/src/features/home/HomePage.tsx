@@ -12,7 +12,7 @@ export default observer(function HomePage(){
     return(
            <Segment inverted textAlign='center' vertical className='masthead'>
                 <Container text>
-                    <Image className='robot' src={`/assets/homepage2.png`} />
+                    <Image className='robot' src={`/assets/homepage.png`} />
                     <h1>eventfriend</h1>
                     {userStore.isLoggedIn ? (
                         <>

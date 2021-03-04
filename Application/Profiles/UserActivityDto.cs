@@ -12,6 +12,5 @@ namespace Application.Profiles
 
         [JsonIgnore]
         public string HostUsername { get; set; }
-
     }
 }

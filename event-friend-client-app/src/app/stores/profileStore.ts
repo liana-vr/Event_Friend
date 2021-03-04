@@ -1,5 +1,4 @@
-import { makeAutoObservable, runInAction, reaction } from "mobx";
-import { reduceEachTrailingCommentRange } from "typescript";
+import { makeAutoObservable, reaction, runInAction } from "mobx";
 import agent from "../api/agent";
 import { Photo, Profile, UserActivity } from "../models/profile";
 import { store } from "./store";
@@ -18,7 +17,7 @@ export default class ProfileStore {
     constructor() {
         makeAutoObservable(this);
 
-        reaction (
+        reaction(
             () => this.activeTab,
             activeTab => {
                 if (activeTab === 3 || activeTab === 4) {
@@ -29,7 +28,6 @@ export default class ProfileStore {
                 }
             }
         )
-
     }
 
     setActiveTab = (activeTab: any) => {
@@ -131,16 +129,15 @@ export default class ProfileStore {
     }
 
     updateFollowing = async (username: string, following: boolean) => {
-        this.loading =true;
+        this.loading = true;
         try {
             await agent.Profiles.updateFollowing(username);
             store.activityStore.updateAttendeeFollowing(username);
             runInAction(() => {
-                if (this.profile && this.profile.username !== store.userStore.user?.username &&
-                        this.profile.username === username) {
+                if (this.profile && this.profile.username !== store.userStore.user?.username && this.profile.username === username) {
                     following ? this.profile.followersCount++ : this.profile.followersCount--;
                     this.profile.following = !this.profile.following;
-                } 
+                }
                 if (this.profile && this.profile.username === store.userStore.user?.username) {
                     following ? this.profile.followingCount++ : this.profile.followingCount--;
                 }
@@ -167,7 +164,6 @@ export default class ProfileStore {
                 this.loadingFollowings = false;
             })
         } catch (error) {
-            console.log(error);
             runInAction(() => this.loadingFollowings = false);
         }
     }
@@ -185,7 +181,6 @@ export default class ProfileStore {
             runInAction(() => {
                 this.loadingActivities = false;
             })
-            
         }
     }
 

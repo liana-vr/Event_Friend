@@ -15,7 +15,6 @@ export default observer(function NavBar() {
         <Menu fixed='top'>
             <Container>
                 <Menu.Item className='navbarLogo' as={NavLink} exact to='/' header>
-                    {/* <img className='smallLogo 'src='/assets/logosmall.png' alt='logo' style={{ marginRight: '10px' }} /> */}
                     eventfriend
                 </Menu.Item>
                 <Menu.Item>

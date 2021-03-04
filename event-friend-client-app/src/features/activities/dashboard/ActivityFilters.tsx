@@ -10,7 +10,7 @@ export default observer(function ActivityFilters(){
         <>
             <Menu vertical size='large' style={{width: '100%', marginTop: 27}}>
                 <Label icon='filter' basic color='purple' content='Filters' className='activityFilters'/>
-                <Menu.Item content='All Activities' active={predicate.has('all')} 
+                <Menu.Item content='All Events' active={predicate.has('all')} 
                     onClick={() => setPredicate('all', 'true')}/>
                 <Menu.Item content='I am Attendng' active={predicate.has('isGoing')} 
                     onClick={() => setPredicate('isGoing', 'true')}/>

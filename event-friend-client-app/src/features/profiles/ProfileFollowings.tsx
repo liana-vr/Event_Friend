@@ -13,7 +13,8 @@ export default observer(function ProfileFollowings(){
         <Tab.Pane loading={loadingFollowings}>
             <Grid>
                 <Grid.Column width={16}>
-                    <Label className='profileLabels' basic color='purple' content={activeTab === 3 ? `Followers: ${profile?.followersCount}` : `Following: ${profile?.followingCount}`}/>
+                    <Label className='profileLabels' basic color='purple' content={activeTab === 3 ? 
+                        `Followers: ${profile?.followersCount}` : `Following: ${profile?.followingCount}`}/>
                 </Grid.Column>
                 <Grid.Column width={16}>
                     <Card.Group itemsPerRow={undefined}>

@@ -15,13 +15,34 @@ html, body {
 .ui.cards>.card>:last-child, .ui.attached:not(.top):not(.bottom).header,
 .profilePhotos, .react-datepicker__header, .ui.segments, .ui.large.vertical.menu, 
 .ui.attached.segment, .ui.inverted.segment>.ui.header, h3, 
-.ui.secondary.pointing.menu,
+.ui.secondary.pointing.menu, .ui.primary.button.lostButton,
 .ui.items>.item>.content>.header, .ui.pink.button, .ui.basic.pink.button, 
 .formCancel, .ui.violet.button, .ui.purple.button, .ui.header, .ui.cards>.card>.content>.header{
   font-family: 'Roboto', sans-serif !important;
 }
 .ui.top.fixed.menu {
-  background: #e1ebf8 !important;
+  background: #dbeafd !important;
+}
+.lost{
+  width: 50em !important;
+  border-radius: 15px !important;
+  box-shadow: none !important;
+  background: #dbeafd !important;
+  border-top: 0px !important;
+}
+.ui.primary.button.lostButton{
+  margin-left: auto !important;
+}
+.ui.fluid.image.lostPic{
+  width: 100% !important;
+  padding: 0 !important;
+  border-radius: 15px !important;
+}
+.ui.fluid.image{
+  width: 50% !important;
+  padding: 15px !important;
+  border-radius: 30px !important;
+  margin-left: auto !important;
 }
 .ui.inverted.segment>.ui.header, .ui.inverted.purple.segment, a{
   color: black !important;
@@ -43,6 +64,10 @@ html, body {
   background: #f8fbff !important;
   box-shadow: 15px 15px 20px 0 #bed0e7,
   -8px -8px 12px 0 rgba(255, 255, 255, 0.4) !important;
+}
+.robot, .notFound{
+  border-radius: 15px !important;
+  margin-bottom: 4em !important;
 }
 .photoWidget{
   width: 200px !important;
@@ -80,9 +105,9 @@ ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected{
     linear-gradient(#e1ebf8, #e1ebf8, #e1ebf8) !important;
   height: 100vh;
 }
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 .ui.inverted.segment h1, .formHeader, .navbarLogo{
-  font-family: 'M PLUS Rounded 1c', sans-serif  !important;
+  font-family: 'Quicksand', sans-serif !important;
 }
 .ui.inverted.segment h1{
   color: rgb(0, 0, 0);
@@ -107,7 +132,7 @@ ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected{
   transform: translateY(5%);
   border-color: white;
 }
-.login, .ui.basic.violet.label.attendLabel, .loginForm, .formSubmit, .viewAttendees, 
+.login, .lostButton, .ui.basic.violet.label.attendLabel, .loginForm, .formSubmit, .viewAttendees, 
 .checkPic, .react-calendar__tile--active, .ui.basic.blue.button.cancelEventButton {
   background: #1381ff !important;
   border-color:  #1381ff !important;
@@ -134,7 +159,7 @@ ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected{
 }
 .activityNameBG{
   border-radius: 0px 15px 15px 0px !important;
-  background: rgba(255, 255, 255, 0.8) !important;
+  background: rgba(255, 255, 255, 0.0) !important;
 }
 .picUploadHeading{
   margin-bottom: 2rem !important;
@@ -170,7 +195,7 @@ ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected{
   transform: translateX(-62%) !important;
   transform: translateY(40%) !important;
 }
-.login, .register {
+.login, .register, .ui.primary.button.lostButton {
   width: 6.5em !important;
   margin: 0.6em !important;
 }
@@ -247,10 +272,10 @@ border-radius: 15px 0 0 15px;
 .formCancel{
   margin-right: 1em !important;
 }
-.ui.button, .ui.basic.button, .ui.basic.label, .editPic, .bigFollowButton {
+.ui.button, .ui.basic.button, .ui.basic.label, .editPic, .bigFollowButton{
   border-radius: 100px !important;
 }
-.ui.move.reveal{
+.ui.move.reveal, .ui.primary.button.lostButton {
   border-radius: 100px !important;
 }
 .editPic, .deletePic{
@@ -263,20 +288,21 @@ border-radius: 15px 0 0 15px;
   color: #ff68f7 !important;
   border-color:  #ff68f7 !important;
 }
-.ui.segments, .ui.mini.modal, .ui.inverted.purple.segment,
-.ui.attached.segment{
+.ui.segments, .ui.mini.modal, .lostPic, .ui.inverted.purple.segment,
+.ui.attached.segment, .robot{
   box-shadow: 15px 15px 20px 0 #bed0e7,
   -8px -8px 12px 0 rgba(255, 255, 255, 0.4) !important;
   border: white !important;
 }
 .ui.dropdown>.menu, .ui.dropdown .menu .menu, .profileHeader, .photoWidget,
-.profileMenu>.ui.menu, .ui.tab.active, .ui.tab.open, .activityForm, 
+.profileMenu>.ui.menu, .ui.tab.active, .ui.tab.open, .activityForm, .notFound,
 .attendeeCard, .ui.cards>.card.profilePhotos, .picUploads, .profileActivityCards {
   box-shadow: 15px 15px 20px 0 rgba(190, 208, 231, 0.6),
   -8px -8px 12px 0 rgba(255, 255, 255, 0.4) !important;
   background: #f8fbff !important;
   border: white;
 }
+
 .ui.segments, .ui.large.vertical.menu, .photoWidget {
   border-radius: 15px !important;
   border: white !important;
@@ -408,6 +434,10 @@ border-radius: 15px 0 0 15px;
     .ui.list>.item .header.attendeeListName{
       font-size: 0.85rem !important;
     }
+    .activityNameBG{
+      border-radius: 0px 15px 15px 0px !important;
+      background: rgba(255, 255, 255, 0.8) !important;
+    }
     .ui.button{
       height: 2.4em !important;
       font-size: 0.7rem !important;
@@ -473,4 +503,10 @@ border-radius: 15px 0 0 15px;
       padding-right: calc(.5rem + 0.2em);
       text-align: center;
     }
+    .ui.fluid.image {
+      width: 100% !important;
+      padding: 0px !important;
+      border-radius: 15px 15px 0px 0px !important;
+      margin-left: auto !important;
+  }
 }
