@@ -460,8 +460,8 @@ border-radius: 15px 0 0 15px;
     .ui.basic.purple.label, .activityFilters, 
     .ui.basic.purple.label.profileLabels{
       height: 2.4em !important;
-      font-size: 0.7rem !important;
-      width: 13em !important;
+      font-size: 0.8rem !important;
+      width: 100px !important;
       text-align: center !important;
     }
     .ui.items{
