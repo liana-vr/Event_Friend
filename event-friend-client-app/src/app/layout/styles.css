@@ -401,7 +401,7 @@ border-radius: 15px 0 0 15px;
     .ui.menu .ui.dropdown .menu>.item, .ui.sub.header, .ui.form .field>.selection.dropdown, .react-calendar,
     .ui.comments .comment a.author, .ui.comments, .editPic, .deletePic, .ui.form textarea, .ui.form input:not([type]),
     .ui.form input[type=text], .ui.large.vertical.menu, .ui.basic.purple.label.activityFilters{
-      font-size: 1rem !important;
+      font-size: 1.2rem !important;
     }
     .ui.black.button.editPic, .ui.pink.button.deletePic{
       width: 1em !important;
@@ -425,7 +425,7 @@ border-radius: 15px 0 0 15px;
     .ui.basic.violet.label.attendLabel{
       font-size: 0.7rem !important;
     }
-    .ui.pink.label.hostLabel{
+    .ui.pink.label.hostLabel, .formCancel {
       background: white !important;
       color: #ff68f7 !important;
       border-color:  #ff68f7 !important;
@@ -461,7 +461,7 @@ border-radius: 15px 0 0 15px;
     .ui.basic.purple.label.profileLabels{
       height: 2.4em !important;
       font-size: 0.7rem !important;
-      width: 10em !important;
+      width: 13em !important;
       text-align: center !important;
     }
     .ui.items{
@@ -508,27 +508,27 @@ border-radius: 15px 0 0 15px;
       padding: 0px !important;
       border-radius: 15px 15px 0px 0px !important;
       margin-left: auto !important;
-  }
-  .lost{
-    width: 50em !important;
-    border-radius: 15px !important;
-    box-shadow: none !important;
-    background: #dbeafd !important;
-    border-top: 0px !important;
-  }
-  .ui.primary.button.lostButton{
-    margin-left: auto !important;
-  }
-  .lostText{
-    text-align: center !important;
-  }
-  .ui.fluid.image.lostPic{
-    width: 100% !important;
-    padding: 0 !important;
-    border-radius: 15px !important;
-  }
-  .mainDropdown, .profileDropdown, .ui.dropdown>.menu, .ui.dropdown .menu .menu{
-    font-size: 1rem !important;
-  }
+    }
+    .lost{
+      width: 50em !important;
+      border-radius: 15px !important;
+      box-shadow: none !important;
+      background: #dbeafd !important;
+      border-top: 0px !important;
+    }
+    .ui.primary.button.lostButton{
+      margin-left: auto !important;
+    }
+    .lostText{
+      text-align: center !important;
+    }
+    .ui.fluid.image.lostPic{
+      width: 100% !important;
+      padding: 0 !important;
+      border-radius: 15px !important;
+    }
+    .mainDropdown, .profileDropdown, .ui.dropdown>.menu, .ui.dropdown .menu .menu{
+      font-size: 1.3rem !important;
+    }
   
 }
