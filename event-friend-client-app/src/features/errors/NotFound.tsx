@@ -16,8 +16,8 @@ export default function NotFound(){
             <Card className='lost' style={{margin: 'auto'}}>
                 <Image className='lostPic' fluid
                         src={`/assets/abstract-page-not-found.png`}/>
-                <Card.Content className='lost'>
-                    <Header icon style={{marginTop: '2em'}}>
+                <Card.Content>
+                    <Header className='lostText' icon style={{marginTop: '2em'}}>
                         Page Not Found
                     </Header>
                 </Card.Content>
