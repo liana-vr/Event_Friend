@@ -9,7 +9,7 @@ html, body {
 .ui.top.fixed.menu, .react-calendar, .react-datepicker-wrapper,
 .login, .ui.pink.label.hostLabel, .loginForm, .formSubmit, .checkPic,
 .register, .viewButton, .registerForm, .formCancel,.activityForm, 
-.profileHeader, .profileMenu>.ui.menu, 
+.profileHeader, .profileMenu>.ui.menu, .ui.form input[type=password],
 .profileMenu>.ui.menu>.item, .react-datepicker,
 .ui.tab.active, .ui.tab.open, .viewAttendees,
 .ui.cards>.card>:last-child, .ui.attached:not(.top):not(.bottom).header,
@@ -102,7 +102,7 @@ ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected{
   display: flex;
   align-items: center;
   background-image:
-    linear-gradient(135deg, #ff68f7 0%, #dbeafd 69%, #853aff 89%) !important;
+    linear-gradient(135deg, #ff68f7, #dbeafd, #dbeafd, #853aff) !important;
   height: 100vh;
 }
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
@@ -402,7 +402,7 @@ border-radius: 15px 0 0 15px;
       margin-bottom: 0.5em !important;
     }
     .ui.items>.item>.content p.activityDetials, .ui.dropdown>.text, .ui.selection.dropdown .menu>.item,
-    .ui.menu .ui.dropdown .menu .active.item, .ui.form textarea, .ui.dropdown .menu>.item:first-child,
+    .ui.menu .ui.dropdown .menu .active.item, .ui.form textarea, .ui.dropdown .menu>.item:first-child, .ui.form input[type=password],
     .ui.menu .ui.dropdown .menu>.item, .ui.sub.header, .ui.form .field>.selection.dropdown, .react-calendar,
     .ui.comments .comment a.author, .ui.comments, .editPic, .deletePic, .ui.form textarea, .ui.form input:not([type]),
     .ui.form input[type=text], .ui.large.vertical.menu, .ui.basic.purple.label.activityFilters{

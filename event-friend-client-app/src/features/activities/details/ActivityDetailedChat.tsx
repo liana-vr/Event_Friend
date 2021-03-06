@@ -2,10 +2,11 @@ import { Formik, Form, Field, FieldProps } from 'formik'
 import { observer } from 'mobx-react-lite'
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Segment, Header, Comment, Loader, Label } from 'semantic-ui-react'
+import { Segment, Header, Comment, Loader, Label, Button } from 'semantic-ui-react'
 import { useStore } from '../../../app/stores/store';
 import * as Yup from 'yup';
 import { formatDistanceToNow } from 'date-fns'
+import MyTextArea from '../../../app/common/form/MyTextArea'
 
 interface Props {
     activityId: string;
@@ -44,28 +45,33 @@ export default observer(function ActivityDetailedChat({ activityId }: Props) {
                     })}
                 >
                     {({ isSubmitting, isValid, handleSubmit }) => (
-                        <Form className='ui form'>
-                            <Field name='body'>
-                                {(props: FieldProps) => (
-                                    <div style={{ position: 'relative' }}>
-                                        <Loader active={isSubmitting} />
-                                        <textarea
-                                            placeholder='Say Something! (Enter to submit)'
-                                            rows={2}
-                                            {...props.field}
-                                            onKeyPress={e => {
-                                                if (e.key === 'Enter' && e.shiftKey) {
-                                                    return;
-                                                }
-                                                if (e.key === 'Enter' && !e.shiftKey) {
-                                                    e.preventDefault();
-                                                    isValid && handleSubmit();
-                                                }
-                                            }}
-                                        />
-                                    </div>
-                                )}
-                            </Field>
+                        // <Form className='ui form'>
+                        //     <Field name='body'>
+                        //         {(props: FieldProps) => (
+                        //             <div style={{ position: 'relative' }}>
+                        //                 <Loader active={isSubmitting} />
+                        //                 <textarea
+                        //                     placeholder='Say Something! (Enter to submit)'
+                        //                     rows={2}
+                        //                     {...props.field}
+                        //                     onKeyPress={e => {
+                        //                         if (e.key === 'Enter' && e.shiftKey) {
+                        //                             return;
+                        //                         }
+                        //                         if (e.key === 'Enter' && !e.shiftKey) {
+                        //                             e.preventDefault();
+                        //                             isValid && handleSubmit();
+                        //                         }
+                        //                     }}
+                        //                 />
+                        //             </div>
+                        //         )}
+                        //     </Field>
+                        // </Form>
+                        <Form>
+                            <MyTextArea placeholder='Say Something...' name='body' rows={2}/>
+                            <Button loading={isSubmitting} disabled={isSubmitting || !isValid} content='Add'
+                                labelPosition='left' icon='edit' color='purple' type='submit' floated='right'/>
                         </Form>
                     )}
                 </Formik>
