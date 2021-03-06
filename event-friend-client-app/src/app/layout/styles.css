@@ -419,10 +419,10 @@ border-radius: 15px 0 0 15px;
       font-size: 1rem !important;
     }
     .react-calendar__month-view__weekdays__weekday{
-      padding: 0.2em !important;
+      padding: 0.3em !important;
     }
     .react-calendar__tile{
-      padding: 0.4em 0.3em;
+      padding: 0.5em 0.4em;
     }
     .react-calendar__navigation button{
       min-width: 24px !important;
@@ -443,7 +443,7 @@ border-radius: 15px 0 0 15px;
       border-radius: 0px 15px 15px 0px !important;
       background: rgba(255, 255, 255, 0.8) !important;
     }
-    .ui.button{
+    .ui.button, .ui.labeled.icon.button{
       height: 2.6em !important;
       font-size: 0.8rem !important;
       width: 6em !important;
@@ -462,7 +462,7 @@ border-radius: 15px 0 0 15px;
     .bigFollowButton{
       margin: auto !important;
     }
-    .ui.basic.purple.label, .activityFilters, 
+    .ui.basic.purple.label, .activityFilters, .ui.basic.purple.label.activityFilters,
     .ui.basic.purple.label.profileLabels, .addChatButton{
       height: 2.4em !important;
       font-size: 0.8rem !important;
@@ -495,7 +495,7 @@ border-radius: 15px 0 0 15px;
       margin-top: 0px !important;
     }
     .ui.mini.modal{
-      width: 60% !important;
+      width: 65% !important;
     }
     .ui.huge.button.login, .ui.huge.button.register{
       width: 8em !important;
