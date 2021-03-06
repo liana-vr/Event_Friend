@@ -76,7 +76,7 @@ export default observer(function ActivityForm() {
                             disabled={isSubmitting || !dirty || !isValid}
                             loading={isSubmitting} floated='right' 
                             positive type='submit' content='Submit' />
-                        <Button className='formCancel' as={Link} to='/activities' floated='right' type='button' content='Cancel' />
+                        <Button className='viewButton' as={Link} to='/activities' floated='right' type='button' content='Cancel' />
                     </Form>
                 )}
             </Formik>

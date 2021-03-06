@@ -102,7 +102,7 @@ ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected{
   display: flex;
   align-items: center;
   background-image:
-    linear-gradient(#ff68f7, #dbeafd, #853aff) !important;
+    linear-gradient(135deg, #ff68f7 0%, #dbeafd 69%, #853aff 89%) !important;
   height: 100vh;
 }
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
@@ -444,24 +444,12 @@ border-radius: 15px 0 0 15px;
       background: rgba(255, 255, 255, 0.8) !important;
     }
     .ui.button{
-      height: 2.4em !important;
-      font-size: 0.7rem !important;
-      width: 5.5em !important;
+      height: 2.6em !important;
+      font-size: 0.8rem !important;
+      width: 6em !important;
       text-align: center !important;
       padding-left: 1em !important;
       padding-right: 1em !important;
-    }
-    .ui[class*="right floated"].button.formCancel{
-      height: 2.4em !important;
-      font-size: 0.7rem !important;
-      width: 5.5em !important;
-      text-align: center !important;
-      padding-left: 1em !important;
-      padding-right: 1em !important;
-      background: #853aff !important;
-      color: white !important;
-      box-shadow:  8px 8px 12px 0 #c19bff,
-      -8px -8px 12px 0 rgba(255, 255, 255, 0.5) !important;
     }
     .bigFollowButton, .ui.pink.basic.button.followButton,
     .ui.purple.button.followButton {
