@@ -101,8 +101,8 @@ ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected{
 .masthead {
   display: flex;
   align-items: center;
-  background-image:
-    linear-gradient(135deg, #ff68f7, #dbeafd, #dbeafd, #853aff) !important;
+  background-image: linear-gradient(to right bottom, #ff68f7, #de94ff, #c5b4ff, #bdccff, #cbdeff, 
+  #c2d9ff, #b9d5ff, #afd0ff, #87b4ff, #7095ff, #706fff, #853aff) !important;
   height: 100vh;
 }
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
@@ -463,7 +463,7 @@ border-radius: 15px 0 0 15px;
       margin: auto !important;
     }
     .ui.basic.purple.label, .activityFilters, 
-    .ui.basic.purple.label.profileLabels{
+    .ui.basic.purple.label.profileLabels, .addChatButton{
       height: 2.4em !important;
       font-size: 0.8rem !important;
       width: 100px !important;

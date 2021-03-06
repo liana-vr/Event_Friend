@@ -68,9 +68,9 @@ export default observer(function ActivityDetailedChat({ activityId }: Props) {
                         //         )}
                         //     </Field>
                         // </Form>
-                        <Form>
+                        <Form className='ui form'>
                             <MyTextArea placeholder='Say Something...' name='body' rows={2}/>
-                            <Button loading={isSubmitting} disabled={isSubmitting || !isValid} content='Add'
+                            <Button className='addChatButton' loading={isSubmitting} disabled={isSubmitting || !isValid} content='Add'
                                 labelPosition='left' icon='edit' color='purple' type='submit' floated='right'/>
                         </Form>
                     )}
