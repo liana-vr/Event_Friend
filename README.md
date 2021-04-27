@@ -1,4 +1,4 @@
-# Event_Friend
+# Eventfriend
 
 <p>Eventfrined is a <mark>fully responsive</mark> social media web aplication, designed to make event organising easier and more fun.  
                         I built this application with a multi-project solution using <mark>ASP.Net Core</mark>, a single-page <mark>React</mark> client app with <mark>TypeScript</mark> and
